@@ -20,6 +20,20 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
     
+    has_one :watchlist,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Watchlist
+
+    has_many :stocks,
+        primary_key: :id,
+        foreign_key: :stock_id,
+        class_name: :Stock
+        
+    has_many :shares,
+        through: :stocks,
+        source: :shares
+    
     # Class method for finding a user ONLY if we have the correct username and password
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

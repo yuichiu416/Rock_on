@@ -9,6 +9,7 @@
 #  today           :float            not null
 #  popularity      :integer
 #  analyst_ratings :integer
+#  in_watchlist    :boolean          default(FALSE), not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
