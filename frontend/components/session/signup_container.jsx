@@ -1,9 +1,9 @@
-import { connect }from 'react-redux';
-import Signup from './signup';
+import { connect } from 'react-redux';
 import { createNewUser } from '../../actions/session';
+import Signup from './signup';
 
-const mapDispatchToPtops = dispatch => ({
+const mapDispatchToProps = dispatch => ({
     createNewUser: formUser => dispatch(createNewUser(formUser)),
 });
 
-export default connect(null, mapDispatchToPtops)(Signup);
+export default connect(null, mapDispatchToProps)(Signup);
