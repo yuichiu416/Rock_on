@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: stocks
+#
+#  id              :bigint           not null, primary key
+#  name            :string           not null
+#  symbol          :string           not null
+#  price           :integer          not null
+#  today           :float            not null
+#  popularity      :integer
+#  analyst_ratings :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  symbol: MyString
+  price: 1
+  today: 1.5
+  popularity: 1
+  analyst_ratings: 1
+  created_at: 2019-09-02 15:27:49
+  updated_at: 2019-09-02 15:27:49
+
+two:
+  name: MyString
+  symbol: MyString
+  price: 1
+  today: 1.5
+  popularity: 1
+  analyst_ratings: 1
+  created_at: 2019-09-02 15:27:49
+  updated_at: 2019-09-02 15:27:49
