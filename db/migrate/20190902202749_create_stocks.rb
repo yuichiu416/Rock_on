@@ -7,6 +7,7 @@ class CreateStocks < ActiveRecord::Migration[5.2]
       t.float :today, null: false
       t.integer :popularity
       t.integer :analyst_ratings
+      t.boolean :in_watchlist, default: false, null:false
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
       t.timestamps
