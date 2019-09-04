@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NavBar from './nav_bar';
+import NavBar from './guest';
 import { logout } from '../../actions/session';
 
 const mapStateToProps = (state) => ({

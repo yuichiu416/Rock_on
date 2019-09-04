@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default () => (
-    <div className="home">
+    <div className="block1">
         <div className="hero-img-frame">
-            <img className="hero-img" src="https://pmcvariety.files.wordpress.com/2017/02/angry-birds-blues-rovio.jpg?w=1000&h=750&crop=1" />
+            <img className="hero-img" src="https://cdn.robinhood.com/assets-about/a4a80e964c803ddb7a9fc7459e0eac01.png" />
         </div>
         <h1>Where birds can chirp.</h1>
     </div>

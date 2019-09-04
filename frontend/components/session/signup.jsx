@@ -25,7 +25,7 @@ export default class Signup extends Component {
     render() {
         return (
             <div className="session-form">
-                <h2>sign Up!</h2>
+                <h2>Sign Up!</h2>
                 <form>
                     <label>
                         Username:
