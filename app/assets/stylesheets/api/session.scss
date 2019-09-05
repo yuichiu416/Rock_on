@@ -10,17 +10,21 @@
    justify-content: center;
    align-items: center;
    form {
-     height: 300px;
+     height: auto;
      width: 300px;
      background: rgba(241, 200, 200, 0.438);
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+     flex-wrap: nowrap
    }
    label {
      padding: 10px;
      display: block;
+   }
+   input{
+     width: 250px;
    }
    button {
      display: block;

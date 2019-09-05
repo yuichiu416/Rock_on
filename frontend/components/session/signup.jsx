@@ -8,6 +8,7 @@ export default class Signup extends Component {
             email: '',
             password: '',
         };
+        this.handleDemo = this.handleDemo.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -22,7 +23,15 @@ export default class Signup extends Component {
         this.props.createNewUser(this.state)
             .then( () => this.props.history.push('/'))
     }
-    
+    handleDemo(e) {
+        e.preventDefault();
+        this.state = {
+            username: 'Demo',
+            password: '123456',
+        };
+        this.props.login(this.state)
+            .then(() => this.props.history.push('/'));
+    }
     render() {
         return (
             <div className="session-form">
@@ -41,6 +50,8 @@ export default class Signup extends Component {
                         <input type="password" value={this.state.password} onChange={this.handleInput("password")} />
                     </label>
                     <button onClick={this.handleSubmit}>Sign Up!</button>
+                    <button onClick={this.handleDemo}>Demo Login</button>
+
                 </form>
             </div>
         )

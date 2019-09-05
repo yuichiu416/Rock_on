@@ -8,7 +8,9 @@
     font-size: 16px;
     color: #edf0f1;
 }
-
+h1{
+    color: black;
+}
 header {
     max-width: 90%;
     display: flex;
@@ -46,7 +48,7 @@ nav{
     margin: 0;
     align-self: flex-start;
 }
-.nav__links li {
+.nav__links li,  {
     display: inline-block;
     padding: 0px 20px;
 }
