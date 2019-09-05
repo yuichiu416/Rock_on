@@ -12,8 +12,6 @@ export default () => (
     <div>
         <Route path="/" component={GuestNavBarContainer} />
         <Route exact path="/" component={Chunk1} />
-        <Route exact path="/" component={Chunk1} />
-        <Route exact path="/" component={Chunk1} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />
     </div>

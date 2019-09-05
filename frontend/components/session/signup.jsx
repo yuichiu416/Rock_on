@@ -8,7 +8,7 @@ export default class Signup extends Component {
             email: '',
             password: '',
         };
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInput(type){
@@ -19,7 +19,8 @@ export default class Signup extends Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createNewUser(this.state).then( () => this.props.history.push('/some_links'))
+        this.props.createNewUser(this.state)
+            .then( () => this.props.history.push('/'))
     }
     
     render() {

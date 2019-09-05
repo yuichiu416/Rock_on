@@ -7,7 +7,6 @@ class Login extends React.Component {
             username: '',
             password: '',
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -20,7 +19,7 @@ class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.props.history.push('/some_links'));
+            .then(() => this.props.history.push('/'));
     }
 
     render() {
@@ -28,20 +27,13 @@ class Login extends React.Component {
             <div className="session-form">
                 <h2>Log In!</h2>
                 <form>
-                    <label>Username:
-                        <input
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.handleInput('username')}
-                        />
+                    <label>
+                        Username:
+                        <input type="text" value={this.state.username} onChange={this.handleInput('username')}/>
                     </label>
 
                     <label>Password:
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
+                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
                         <button onClick={this.handleSubmit}>Log In!</button>
                     </label>
                 </form>

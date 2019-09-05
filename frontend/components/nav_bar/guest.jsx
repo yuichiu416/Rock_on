@@ -11,10 +11,10 @@ export default (props) => {
                 </div>
                 <nav>
                     <ul className="nav__links">
-                        <li><a href="#">Investing</a></li>
-                        <li><a href="#">Cash Management</a></li>
-                        <li><a href="#">Learn</a></li>
-                        <li><a href="#">More</a></li>
+                        <li><a href="#investing">Investing</a></li>
+                        <li><a href="#cash_management">Cash Management</a></li>
+                        <li><a href="#learn">Learn</a></li>
+                        <li><a href="#more">More</a></li>
                     </ul>
                 </nav>
                     <div className="tail">
