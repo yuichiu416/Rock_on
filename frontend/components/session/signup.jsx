@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { receiveErrors } from '../../actions/session';
+import React, { Component } from 'react';
 
 export default class Signup extends Component {
     constructor(props){
@@ -8,7 +7,9 @@ export default class Signup extends Component {
             username: '',
             email: '',
             password: '',
+            errors:  props.errors,
         };
+        props.clearErrors();
         this.handleDemo = this.handleDemo.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -20,9 +21,9 @@ export default class Signup extends Component {
     }
 
     handleSubmit(e){
-        e.preventDefault();
+    e.preventDefault();
         this.props.createNewUser(this.state)
-            .then(() => this.props.history.push('/'), err => alert(err.responseText));
+            .then(() => this.props.history.push('/'));
     }
     handleDemo(e) {
         e.preventDefault();
@@ -34,6 +35,14 @@ export default class Signup extends Component {
             .then(() => this.props.history.push('/'));
     }
     render() {
+        const { errors } = this.props;
+        let errorList, errorUl;
+        if (errors.length > 0) {
+            errorList = this.props.errors.map(error => (
+                <li key={error}>{error}</li>
+            ));
+            errorUl = <ul>{errorList}</ul>;
+        }
         return (
             <div className="session-form">
                 <h2>Sign Up!</h2>
@@ -52,7 +61,7 @@ export default class Signup extends Component {
                     </label>
                     <button onClick={this.handleSubmit}>Sign Up!</button>
                     <button onClick={this.handleDemo}>Demo Login</button>
-
+                    <ul>{errorUl}</ul>
                 </form>
             </div>
         )

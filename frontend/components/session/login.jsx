@@ -1,5 +1,4 @@
 import React from 'react';
-import { receiveErrors } from '../../actions/session';
 
 class Login extends React.Component {
     constructor(props) {
@@ -7,7 +6,9 @@ class Login extends React.Component {
         this.state = {
             username: '',
             password: '',
+            errors:  props.errors,
         };
+        props.clearErrors();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
@@ -17,11 +18,13 @@ class Login extends React.Component {
             this.setState({ [type]: e.target.value });
         };
     }
-    
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state);
+    debugger;
+        this.setState(this.state);
         this.props.login(this.state)
-            .then(() => this.props.history.push('/'), err => alert(err.responseText));
+            .then(() => this.props.history.push('/'));
     }
     handleDemo(e){
         e.preventDefault();
@@ -34,6 +37,14 @@ class Login extends React.Component {
     }
 
     render() {
+        const {errors} = this.props;
+        let errorList, errorUl;
+        if(errors.length > 0){
+            errorList = this.props.errors.map(error => (
+                <li key={error}>{error}</li>
+            ));
+            errorUl = <ul>{errorList}</ul>;
+        }
         return (
             <div className="session-form">
                 <h2>Log In!</h2>
@@ -48,6 +59,7 @@ class Login extends React.Component {
                     </label>
                         <button onClick={this.handleSubmit}>Log In!</button>
                         <button onClick={this.handleDemo}>Demo Login</button>
+                    <ul>{errorUl}</ul>
                 </form>
             </div>
         );

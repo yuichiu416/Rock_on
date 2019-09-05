@@ -8,8 +8,11 @@
     font-size: 16px;
     color: #edf0f1;
 }
-h1{
+h1, li{
     color: black;
+}
+.button:hover, a:hover, button:hover{
+    cursor: pointer;
 }
 header {
     max-width: 90%;
@@ -74,7 +77,6 @@ nav{
     background-color: rgba(0,136,169,1);
     border: none;
     border-radius: 50px;
-    cursor: pointer;
     transition: all 0.3s ease 0s;
 }
 
