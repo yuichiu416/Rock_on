@@ -3,5 +3,4 @@ import sessionReducer from './session';
 
 export default combineReducers({
     session: sessionReducer,
-    
 });

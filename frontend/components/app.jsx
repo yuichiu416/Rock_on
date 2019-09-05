@@ -8,8 +8,10 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, BinaryRoute} from '../utils/route_util';
 import LoggedIn from './home/loggedin';
 
-export default () => (
-    <div>
+export default () => {
+    return (
+
+        <div>
         <AuthRoute path="/" component={GNavContainer} />
         <AuthRoute exact path="/" component={Chunk1} />
 
@@ -23,5 +25,6 @@ export default () => (
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />
         <ProtectedRoute path="/chirps" component={LoggedIn} /> */}
-    </div>
-);
+        </div>
+    );
+};

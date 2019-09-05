@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { receiveErrors } from '../../actions/session';
 
 export default class Signup extends Component {
     constructor(props){
@@ -21,7 +22,7 @@ export default class Signup extends Component {
     handleSubmit(e){
         e.preventDefault();
         this.props.createNewUser(this.state)
-            .then( () => this.props.history.push('/'))
+            .then(() => this.props.history.push('/'), err => alert(err.responseText));
     }
     handleDemo(e) {
         e.preventDefault();

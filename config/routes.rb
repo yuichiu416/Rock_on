@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post 'stocks/:stockName', to: 'stocks#trade'
   get 'account', to: 'users#show'
 
+  match '#/*path' => 'root#bad_route', via: :all
   match '*path' => 'root#bad_route', via: :all
 end

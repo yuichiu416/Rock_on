@@ -1,4 +1,5 @@
 import React from 'react';
+import { receiveErrors } from '../../actions/session';
 
 class Login extends React.Component {
     constructor(props) {
@@ -10,17 +11,17 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
-
+    
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
         };
     }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.props.history.push('/'));
+            .then(() => this.props.history.push('/'), err => alert(err.responseText));
     }
     handleDemo(e){
         e.preventDefault();
