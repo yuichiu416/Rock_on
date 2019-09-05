@@ -18,5 +18,10 @@ export default () => (
         
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />
+        {/* <Route path="/" component={GNavContainer} />
+        <Route exact path="/" component={Chunk1} />
+        <AuthRoute path="/signup" component={SignupContainer} />
+        <AuthRoute path="/login" component={LoginContainer} />
+        <ProtectedRoute path="/chirps" component={LoggedIn} /> */}
     </div>
 );

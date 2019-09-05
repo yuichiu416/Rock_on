@@ -21,9 +21,10 @@ export default (props) => {
                     <ul className="nav__links">
                         <li><Link to="/free_stock">Free Stock</Link></li>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link>Notifications</Link></li>
+                        <li><a>Notifications</a></li>
                         <li><Link to="/account">Account</Link></li>
                     </ul>
+                    <button onClick={() => props.logout()}>Log out!</button>
                 </div>
             </header>
         </div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'root#index'
+
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:new, :create, :destroy]
   end
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
   post 'stocks/:stockName', to: 'stocks#trade'
   get 'account', to: 'users#show'
 
+  match '*path' => 'root#bad_route', via: :all
 end
