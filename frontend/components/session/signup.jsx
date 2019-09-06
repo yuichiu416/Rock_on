@@ -45,8 +45,8 @@ export default class Signup extends Component {
         }
         return (
             <div className="session-form">
-                <h2>Sign Up!</h2>
                 <form>
+                    <h2>Sign Up!</h2>
                     <label>
                         Username:
                         <input type="text" value={this.state.username} onChange={this.handleInput("username")} />
@@ -61,8 +61,8 @@ export default class Signup extends Component {
                     </label>
                     <button onClick={this.handleSubmit}>Sign Up!</button>
                     <button onClick={this.handleDemo}>Demo Login</button>
-                    <ul>{errorUl}</ul>
                 </form>
+                <ul>{errorUl}</ul>
             </div>
         )
     }

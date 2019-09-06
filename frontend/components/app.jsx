@@ -4,19 +4,27 @@ import CNavContainer from './nav_bar/customer_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import Chunk1 from './home/chunk1';
-import { Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { Switch } from 'react-router';
 import { AuthRoute, ProtectedRoute, BinaryRoute} from '../utils/route_util';
 import LoggedIn from './home/loggedin';
+import BadRoute from './home/404';
 
 export default () => {
     return (
 
         <div>
-        <AuthRoute path="/" component={GNavContainer} />
-        <AuthRoute exact path="/" component={Chunk1} />
+            <Switch>
+                <AuthRoute path="/" component={GNavContainer} />
+                <ProtectedRoute path="/" component={CNavContainer} />
+            </Switch>
 
-        <ProtectedRoute path="/" component={CNavContainer} />
-        <ProtectedRoute exact path="/" component={LoggedIn} />
+            <Switch>
+                <AuthRoute exact path="/" component={Chunk1} />
+                <ProtectedRoute exact path="/" component={LoggedIn} />
+                <BadRoute/>
+            </Switch>
+
         
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />

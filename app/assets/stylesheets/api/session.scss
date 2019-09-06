@@ -3,10 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
  .session-form {
+   position: relative;
    display: flex;
    flex-direction: column;
-   width: 100%;
-   height: 90vh;
    justify-content: center;
    align-items: center;
    form {
