@@ -13,10 +13,9 @@ export default (props) => {
                 <div className="header-nav-logo">
                     <Link to="/"><img src="/images/logo.png" alt="logo" /></Link>
                 </div>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
-                </Form>
+                <form className="search">
+                    <input type="text" name="search" placeholder="Search.." />>
+                </form>
                 <div className="tail">
                     <ul className="nav__links">
                         <li><Link to="/free_stock">Free Stock</Link></li>

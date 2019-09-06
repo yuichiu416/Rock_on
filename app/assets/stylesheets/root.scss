@@ -52,6 +52,7 @@ nav{
 }
 .nav__links {
     list-style: none;
+    display: inline-block;
     margin: 0;
     align-self: flex-start;
 }
@@ -150,4 +151,19 @@ nav{
 .disclosure{
     color: green;
     align-self: flex-start;
+}
+
+ .search {
+  background-color: white;
+  background-image: url('/images/searchicon.png');
+  background-size: 25px 25px;
+  width: auto;
+  margin: 0;
+  box-sizing: border-box;
+//   border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
 }
