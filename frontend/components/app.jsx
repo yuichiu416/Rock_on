@@ -12,7 +12,6 @@ import BadRoute from './home/404';
 
 export default () => {
     return (
-
         <div>
             <Switch>
                 <AuthRoute path="/" component={GNavContainer} />
@@ -22,12 +21,12 @@ export default () => {
             <Switch>
                 <AuthRoute exact path="/" component={Chunk1} />
                 <ProtectedRoute exact path="/" component={LoggedIn} />
+                <AuthRoute path="/signup" component={SignupContainer} />
+                <AuthRoute path="/login" component={LoginContainer} />
                 <BadRoute/>
             </Switch>
 
         
-        <AuthRoute path="/signup" component={SignupContainer} />
-        <AuthRoute path="/login" component={LoginContainer} />
         {/* <Route path="/" component={GNavContainer} />
         <Route exact path="/" component={Chunk1} />
         <AuthRoute path="/signup" component={SignupContainer} />
