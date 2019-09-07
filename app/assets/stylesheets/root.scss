@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 * {
     box-sizing: border-box;
-    margin: auto;
-    padding: auto;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -87,30 +85,9 @@ nav{
 
 #signup {
     margin-left: 20px;
+    width: 150px;
 }
 
-.chunk1 {
-    margin: 0 120px;
-    background-color:#F2FFF2;
-    text-align:center;
-    display: flex;
-}
-
-.left {
-    width: 50%;
-    height: 100%;
-    display: inline-block;
-}
-
-.right{
-    width: 50%;
-    height: 100%;
-    display: inline-block;
-}
-.chunk1-img{
-    max-width: 100%;
-    max-height: 100%;
-}
 .vertical-flex{
     display: flex;
     flex-direction: column;
@@ -155,6 +132,7 @@ nav{
 
  .search {
   background-color: white;
+  display: inline-block;
   background-image: url('/images/searchicon.png');
   background-size: 25px 25px;
   width: 30%;

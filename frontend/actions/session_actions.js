@@ -1,4 +1,4 @@
-import { postUser, deleteSession, postSession } from '../utils/session';
+import { postUser, deleteSession, postSession } from '../util/session_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -30,7 +30,6 @@ export const createNewUser = formUser => dispatch => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 );
-   
 
 export const login = formUser => dispatch => (
     postSession(formUser).then(user => (
