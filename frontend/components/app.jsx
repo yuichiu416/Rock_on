@@ -1,6 +1,4 @@
 import React from 'react';
-import GNavContainer from './nav_bar/guest_container';
-import CNavContainer from './nav_bar/customer_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import Chunk1 from './home/chunk1';

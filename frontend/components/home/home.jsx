@@ -10,7 +10,7 @@ export default class Home extends Component {
     render() {
         const { currentUser, logout } = this.props
         return (
-            <div>
+            <div id="home">
                 <NavBar currentUser={currentUser} logout={logout} />
                 <Chunk1 />
             </div>
