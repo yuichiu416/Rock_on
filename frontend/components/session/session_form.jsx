@@ -57,10 +57,10 @@ class SessionForm extends React.Component {
                 Email:
                         <input type="text" value={this.state.email} onChange={this.handleInput("email")} /><br/>
                     </label>;
-            button = <button lassName="button" onClick={this.handleSignUp}>Sign Up!</button>;
+            button = <button className="button" onClick={this.handleSignUp}>Sign Up!</button>;
         }
         else {
-            button = <button lassName="button" onClick={this.handleLogIn}>Log In!</button>
+            button = <button className="button" onClick={this.handleLogIn}>Log In!</button>
         }
         return (
             <div className="sessionform">

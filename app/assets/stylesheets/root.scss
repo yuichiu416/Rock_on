@@ -4,24 +4,13 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: #edf0f1;
+    // color: #edf0f1;
 }
 h1, li{
     color: black;
 }
 .button:hover, a:hover, button:hover{
     cursor: pointer;
-}
-header {
-    max-width: 90%;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;    
-    background-color: white;
-}
-#bad_route{
-    margin: auto;
-    font-size: 54px;
 }
   .header-nav-logo {
     margin: 0;
@@ -82,50 +71,7 @@ nav{
 .button:hover {
     background-color: rgba(0,136,169,0.8);
 }
-
-#signup {
-    margin-left: 20px;
-    width: 150px;
-}
-
 .vertical-flex{
     display: flex;
     flex-direction: column;
-}
-.heading1{
-    margin: 20px 0;
-    color: black;
-    font-size: 32px;
-    text-align: left;
-    font-weight: bold;
-}
-.paragraph1{
-    color: black;
-    width: 350px;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: left;
-
-}
-.hidable{
-    display: none;
-    position: absolute;
-    left: -1px;
-    font-size: 14px;
-    white-space: nowrap;
-    background: #fff;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    overflow: hidden;
-}
-
-.hidable:hover{
-    display: block;
-}
-.disclosure{
-    color: green;
-    align-self: flex-start;
 }

@@ -12,25 +12,25 @@ const NavBar = ({ currentUser, logout }) => {
                     </g>
                 </svg>
             </NavLink>
-            <section className="site-navigation">
+            <div className="site-navigation">
                 <form className="search">
-                    <input type="text" name="search" placeholder="Search.." />>
+                    <input type="text" name="search" placeholder="Search.." />
                 </form>
-            </section>
-            <section className="loggedin-nav-links">
+            </div>
+            <div className="loggedin-nav-links">
                 <NavLink to="/" className="loggedin-nav-link">Home</NavLink>
-                <button onClick={logout} className="">Log Out</button>
-            </section>
+                <button onClick={logout} className="logout">Log Out</button>
+            </div>
         </nav>
      ) : (
         <nav className="nav-bar">
             <div className="header-nav-logo">
                 <Link to="/"><img src="/images/logo.png" alt="logo" /></Link>
             </div>
-            <section className="nav-links">
+            <div className="nav-links">
                 <NavLink to="/login" className="nav-link">Log In</NavLink>
                 <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
-            </section>
+            </div>
         </nav>
     );
     return (
