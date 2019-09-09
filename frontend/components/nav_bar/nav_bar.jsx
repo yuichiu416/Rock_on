@@ -34,7 +34,7 @@ const NavBar = ({ currentUser, logout }) => {
         </nav>
     );
     return (
-        <div>
+        <div className="flex">
             {display}
         </div>
     );

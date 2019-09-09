@@ -1,0 +1,23 @@
+#stock{
+    display:flex;
+    width: 70%;
+    height: 100%;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+#loading-text{
+    top: 150px;
+    font-size: 36px;
+    margin: auto;
+}
+
+.stock-panel{
+    background-color: darkgrey;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.stock-panel h1{
+    font-size: 60px;
+}
