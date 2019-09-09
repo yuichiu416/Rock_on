@@ -1,6 +1,6 @@
 .loggedin-nav-bar{
   display: flex;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -26,6 +26,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 45px 8px 55px;
+
 }
 
 .nav-bar img {
@@ -81,4 +82,7 @@
 
 .logout{
   margin-right: 30px;
+}
+.flex{
+  display: flex;
 }
