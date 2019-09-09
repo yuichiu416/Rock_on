@@ -27,7 +27,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w --mode=development",
-    "build": "webpack -p --progress"
+    "build": "webpack -p --progress",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
   },
   "repository": {
     "type": "git",
