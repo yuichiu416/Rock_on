@@ -11,8 +11,8 @@ class Stock extends Component {
     }
     render() {
         return (
-            <div id="stock">
-                <div id="loading-text" >Click symbols on the right to load stock information</div>
+            <div className="stock">
+                <div className="loading-text" >Click symbols on the right to load stock information</div>
                 <Watchlist />
             </div>
         )

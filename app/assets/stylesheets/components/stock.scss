@@ -1,23 +1,110 @@
-#stock{
+.stock{
     display:flex;
-    width: 70%;
-    height: 100%;
+    width: 60%;
+    height: 100vh;
     flex-direction: row;
     margin: 0 auto;
+    // background-color: rgb(27, 27, 27);
 }
 
-#loading-text{
+.loading-text{
     top: 150px;
     font-size: 36px;
     margin: auto;
 }
 
 .stock-panel{
-    background-color: darkgrey;
+    // background-color: rgb(27, 27, 27);
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
+    display: grid;
+    font-size: 14px;
+    grid-template-columns: [line1] 25% [line2] 25% [line3] 25% [line4] 25% [line5];
+    grid-template-rows: [r1] minmax(20px, 60px) [r2] 50px [r3] 70px [r4] auto [r5] 100px [r6];
+    max-height: 100%;
+    margin-bottom: auto;
 }
 
+.stock-panel * {
+    // color: white;
+    color:black;
+}
 .stock-panel h1{
-    font-size: 60px;
+    font-size: 48px;
+    text-align: left;
+}
+.tags {
+    grid-column-start: line1;
+    grid-column-end: line5;
+    grid-row-start: r1;
+    grid-row-end: r2;
+    align-self: center;
+    ul, li{
+        display: inline;
+        margin: 0 20px 0 0;
+        padding: 2px;
+    }
+}
+.tag{
+    margin-left: 20px;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    align-self: center;
+    // background-color: rgb(45, 32, 31);
+    color: red;
+    background-color: rgb(255, 245, 243);
+}
+.stock-name {
+    grid-column-start: line1;
+    grid-column-end: line5;
+    grid-row-start: r2;
+    grid-row-end: r3;
+}
+
+.about-h2{
+    grid-column-start: line1;
+    grid-column-end: line5;
+    grid-row-start: r3;
+    grid-row-end: r4;
+    // color: white;
+    color:black;
+    font-size: 36px;
+    padding: 20px 0;
+    align-self: center;
+}
+.about-p{
+    grid-column-start: line1;
+    grid-column-end: line5;
+    grid-row-start: r4;
+    grid-row-end: r5;
+    padding: 15px 0;
+}
+.about-ceo{
+    grid-column-start: line1;
+    grid-column-end: span 1;
+    grid-row-start: r5;
+    grid-row-end: r6;
+    padding: 15px 0;
+}
+.about-company-name{
+    grid-column-start: line2;
+    grid-column-end: span 1;
+    grid-row-start: r5;
+    grid-row-end: r6;
+    padding: 15px 0;
+}
+.about-hq{
+    grid-column-start: line3;
+    grid-column-end: span 1;
+    grid-row-start: r5;
+    grid-row-end: r6;
+    padding: 15px 0;
+}
+#more {
+    display: none;
+}
+#read-more-link{
+    color: red;
+    font-weight: bold; 
 }

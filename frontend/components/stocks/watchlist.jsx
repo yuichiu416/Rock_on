@@ -14,10 +14,10 @@ class Watchlist extends Component{
 
     render(){
         return (
-            <Paper id="watchlist">
+            <Paper className="watchlist">
                 <Table>
                     <thead>
-                        <tr>
+                        <tr className="watchlist-header">
                             <th>#</th>
                             <th>Stock Symbol</th>
                         </tr>
