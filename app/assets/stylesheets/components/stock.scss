@@ -1,6 +1,6 @@
 .stock{
     display:flex;
-    width: 60%;
+    max-width: 950px;
     height: 100vh;
     flex-direction: row;
     margin: 0 auto;
@@ -20,7 +20,7 @@
     display: grid;
     font-size: 14px;
     grid-template-columns: [line1] 25% [line2] 25% [line3] 25% [line4] 25% [line5];
-    grid-template-rows: [r1] minmax(20px, 60px) [r2] 50px [r3] 70px [r4] auto [r5] 100px [r6];
+    grid-template-rows: [r1] minmax(20px, 100px) [r2] auto [r3] 70px [r4] auto [r5] 100px [r6];
     max-height: 100%;
     margin-bottom: auto;
 }
@@ -30,7 +30,7 @@
     color:black;
 }
 .stock-panel h1{
-    font-size: 48px;
+    font-size: 36px;
     text-align: left;
 }
 .tags {
@@ -40,7 +40,7 @@
     grid-row-end: r2;
     align-self: center;
     ul, li{
-        display: inline;
+        display: inline-block;
         margin: 0 20px 0 0;
         padding: 2px;
     }
@@ -69,7 +69,7 @@
     grid-row-end: r4;
     // color: white;
     color:black;
-    font-size: 36px;
+    font-size: 24px;
     padding: 20px 0;
     align-self: center;
 }
@@ -107,4 +107,7 @@
 #read-more-link{
     color: red;
     font-weight: bold; 
+}
+.bold {
+    font-weight: bold;
 }

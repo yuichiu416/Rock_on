@@ -28,10 +28,3 @@ export const fetchStock = ticker => dispatch => (
     fetchStockCompany(ticker).then( stock =>
         dispatch(receiveStockCompany(stock)))
 );
-
-// export const fetchStocks = () => dispatch => {
-//     fetchStocks().then(stocks => dispatch(receiveStocks(stocks)));
-// };
-
-// export const fetchStockStats = (ticker) => {
-//     fetchStockStats.}

@@ -1,5 +1,6 @@
 .watchlist{
-    width: 275px;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
     min-width: 275px;
     height: auto;
     background-color: white;
@@ -7,10 +8,20 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     margin-top: 0;
-    max-height: 250px;
-    overflow-y: auto;
+    height: auto;
+    margin-bottom: auto;
+    
+    thead th{
+        padding-bottom: 5px;
+    }
+    td{
+        padding: 5px 0;
+    }
 }
-
-.watchlist-header{
-    padding: 5px 0;
+.watchlist td{
+    border: 1px solid black;
+}
+.watchlist-header th{
+    font-weight: bold;
+    font-size: 24px;
 }

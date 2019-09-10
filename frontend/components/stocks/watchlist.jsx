@@ -1,18 +1,57 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 
-const rows = [
+export const stockList = [
     "MSFT",
     "AMD",
-    "VTI"
+    "DIS",
+    "INTC",
+    "TSLA",
+    "NVDA",
+    "AAPL",
+    "SQ",
+    "GPRO",
+    "SNAP",
+    "FB",
+    "AMZN",
+    "BAC",
+    "NFLX",
+    "UBER",
+    "TWTR",
+    "FIT",
+    "BABA",
+    "ZNGA",
+    "CHK",
+    "NIO",
+    "T",
+    "APHA",
+    "S",
+    "ATVI",
+    "KO",
+    "LYFT",
+    "V",
+    "IQ",
+    "PYPL",
+    "SPY",
+    "CSCO",
+    "TECHY",
+    "CRM",
+    "F"
 ];
 
 class Watchlist extends Component{
-
     render(){
+        const trs = stockList.map((ticker, idx) => {
+            return (
+                <tr key={ticker}>
+                    <td>{idx}</td>
+                    <td><Link to={`/stocks/${ticker}`}>{ticker}</Link></td>
+                </tr>
+            );
+        });
+
         return (
             <Paper className="watchlist">
                 <Table>
@@ -23,37 +62,7 @@ class Watchlist extends Component{
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><Link to="/stocks/MSFT" >MSFT</Link></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><Link to="/stocks/AMD" >AMD</Link></td>
-                           
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><Link to="/stocks/DIS" >DIS</Link></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><Link to="/stocks/INTC" >INTC</Link></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td><Link to="/stocks/NVDA" >NVDA</Link></td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td><Link to="/stocks/NTDOY" >NTDOY</Link></td>
-                        </tr>
-
-                        <tr>
-                            <td>7</td>
-                            <td><Link to="/stocks/SQ" >SQ</Link></td>
-                        </tr>
+                        {trs}
                     </tbody>
                 </Table>
             </Paper>

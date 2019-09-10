@@ -85,3 +85,24 @@
 .flex{
   display: flex;
 }
+.stock-search{
+  position: absolute;
+  background-color: white;
+  width: 214px;
+
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  height: auto;
+  box-shadow: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 0;
+  height: auto;
+  margin-bottom: auto;
+  li{
+    padding: 5px 0;
+    border: 1px solid gray;
+  }
+}
+.selected{
+  background-color: red;
+}

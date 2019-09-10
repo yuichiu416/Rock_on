@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
 import Watchlist from './watchlist';
+import { stockList } from '../stocks/watchlist';
 
 // import Footer from '../footer/footer';
 
@@ -56,23 +57,23 @@ class StockShow extends React.Component {
                     <div className="tags">
                         <ul>{tags}</ul>
                     </div>
-                    <h1 className="stock-name">{this.state.stock.symbol}</h1>
+                    <h1 className="stock-name">{this.state.stock.companyName}</h1>
                         <h2 className="about-h2">About</h2>
                         <p className="about-p">{this.state.lessDescription}
                             <span id="dots">...</span>
                             <span id="more">{this.state.moreDescription}</span>
                         </p>
                         <a onClick={this.myFunction} id="read-more-link">Read more</a>
-                        <span className="about-ceo">CEO<br/>{this.state.stock.CEO}</span>
-                        <span className="about-company-name">Company Name<br />{this.state.stock.companyName}</span>
-                        <span className="about-hq">Headquarters<br />{this.state.stock.city}</span>           
+                        <span className="about-ceo"><span className="bold">CEO</span><br/>{this.state.stock.CEO}</span>
+                <span className="about-company-name"><span className="bold">Company Name</span><br />{this.state.stock.companyName}</span>
+                <span className="about-hq"><span className="bold">Headquarters</span><br />{this.state.stock.city}</span>           
                 </div>
         }
         else
             stockInfo = <div className="loading-text">Loading stock information</div>
         return (
             <div>
-                <NavBar currentUser={currentUser} logout={logout} />
+                <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 <div className="stock">
                     {stockInfo}
                     <Watchlist />

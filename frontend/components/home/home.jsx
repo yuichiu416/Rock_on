@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from '../nav_bar/nav_bar';
 import Stock from '../stocks/stock_index';
+import { stockList } from '../stocks/watchlist';
 
 import { AuthRoute, ProtectedRoute, BinaryRoute } from '../../util/route_util';
 import Splash from './splash';
@@ -13,7 +14,7 @@ export default class Home extends Component {
         const display = currentUser ? (<Stock />) : (<Splash />) 
         return (
             <div id="home">
-                <NavBar currentUser={currentUser} logout={logout} />
+                <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 {display}
                
             </div>
