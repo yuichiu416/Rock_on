@@ -14,7 +14,6 @@
 .loggedin-nav-link{
   padding-right: 20px;
 }
-
 .nav-bar {
   display: flex;
   position: fixed;
@@ -24,15 +23,12 @@
   background: white;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 45px 8px 55px;
-
+  padding: 10px 45px 10px 45px;
 }
-
 .nav-bar img {
   height: 45px;
   width: 45px;
 }
-
 .nav-link {
   display: inline-block;
   width: 80px;
@@ -47,19 +43,15 @@
   border: none;
   cursor: pointer;
 }
-
 .nav-link:last-child {
   margin: 0;
 }
-
 .nav-link:hover {
   color: #1ae9aa;
 }
-
 .nav-link:focus {
   outline: none;
 }
-
 .search {
   background-color: white;
   display: inline-block;
@@ -78,7 +70,6 @@
   width: 25px;
   margin-left: 25px;
 }
-
 .logout{
   margin-right: 30px;
 }
@@ -89,7 +80,6 @@
   position: absolute;
   background-color: white;
   width: 214px;
-
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   height: auto;

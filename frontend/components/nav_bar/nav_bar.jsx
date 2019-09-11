@@ -13,12 +13,11 @@ class NavBar extends React.Component{
         this.handleInput = this.handleInput.bind(this);
     }
     componentDidMount(){
+        let lastIdx = this.matches().length - 1;
+        let index = this.state.index;
         document.addEventListener("keydown", (e) => {
-            let lastIdx = this.matches().length - 1;
-            let index = this.state.index;
             if(e.key === "Enter"){
                 document.getElementById(`match-${index}`).click();
-                console.log(`match-${index}`);
             }
             if(e.key === "ArrowUp"){
                     index--;
@@ -31,6 +30,11 @@ class NavBar extends React.Component{
             else if(index > lastIdx)
                 index = 0;
             this.setState({index: index})
+        });
+        document.addEventListener("mouseover", (e) => {
+            if(e.target.localName === "li"){
+                this.setState({ index: parseInt(e.target.firstChild.id.replace("match-", ""))});
+            }
         });
     }
 
@@ -65,7 +69,7 @@ class NavBar extends React.Component{
     render(){
         const { currentUser, logout } = this.props;
         let results = this.matches().map((result, i) => (
-            <li key={i} onClick={this.selectName} className={i == this.state.index ? "selected" : ""} ><Link to={`/stocks/${result}`}id={`match-${i}`}>{result}</Link></li>
+            <li key={i} onClick={this.selectName} className={i == this.state.index ? "selected" : ""}><Link to={`/stocks/${result}`} id={`match-${i}`}>{result}</Link></li>
         ));
         results = <ul className="stock-search">{results}</ul>
 

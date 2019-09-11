@@ -2,8 +2,12 @@ import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
 import Watchlist from './watchlist';
 import { stockList } from '../stocks/watchlist';
-
+import TransactionForm from './transaction_form';
 // import Footer from '../footer/footer';
+const tabs = [
+    { title: 'Buy', Shares: 0, price: 0, credit: "Estimated Cost" },
+    { title: 'Sell', Shares: 0, price: 0, credit: "Estimated Credit" }
+];
 
 class StockShow extends React.Component {
     constructor(props){
@@ -76,7 +80,7 @@ class StockShow extends React.Component {
                 <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 <div className="stock">
                     {stockInfo}
-                    <Watchlist />
+                    <TransactionForm tabs={tabs} />
                 </div>
             </div>
         )

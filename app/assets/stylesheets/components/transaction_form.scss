@@ -1,0 +1,42 @@
+.transaction-form{
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    min-width: 275px;
+    height: auto;
+    background-color: white;
+    box-shadow: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: left;
+    margin-top: 0;
+    height: 400px;
+    
+    thead th{
+        padding-bottom: 5px;
+    }
+    td{
+        padding: 5px 0;
+    }
+}
+.transaction-form-header{
+
+}
+.tab-header{
+    display: flex;
+    justify-content: center
+}
+.tab-header li{
+    list-style: none;
+    width: 50%;
+    text-align: center;
+}
+.tab-header:hover{
+    color: red;
+    cursor: pointer;
+}
+.left-label{
+    width: 50%;
+    margin-right: auto;
+}
+.share-input{
+    width: 30px;
+}
