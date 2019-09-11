@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import StockShow from './stock_show';
 import { logout } from '../../actions/session_actions';
-import { fetchStock } from '../../actions/stock_actions';
+import { fetchStock, fetchStockStatistics } from '../../actions/stock_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let stock;
@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     fetchStock: ticker => dispatch(fetchStock(ticker)),
+    fetchStockStatistics: ticker => dispatch(fetchStockStatistics(ticker)),
     logout: () => dispatch(logout())
 });
 

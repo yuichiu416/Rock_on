@@ -7,7 +7,6 @@ export const RECEIVE_STOCK_COMPANY = 'RECEIVE_STOCK_COMPANY';
 export const RECEIVE_STOCKS = 'RECEIVE_STOCKS';
 export const RECEIVE_STOCK_STATS = 'RECEIVE_STOCK_STATS';
 
-
 const receiveStockCompany = stock => ({
     type: RECEIVE_STOCK_COMPANY,
     stock
@@ -27,4 +26,8 @@ const receiveStockStats = (ticker, stats) => ({
 export const fetchStock = ticker => dispatch => (
     fetchStockCompany(ticker).then( stock =>
         dispatch(receiveStockCompany(stock)))
+);
+export const fetchStockStatistics = ticker => dispatch => (
+    fetchStockStats(ticker).then(stats => 
+        dispatch(receiveStockStats(ticker, stats)))
 );

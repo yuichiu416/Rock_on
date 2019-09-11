@@ -13,7 +13,7 @@ export default class Home extends Component {
         const { currentUser, logout } = this.props;
         const display = currentUser ? (<Stock />) : (<Splash />) 
         return (
-            <div class="home">
+            <div className="home">
                 <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 {display}
                

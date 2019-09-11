@@ -1,8 +1,9 @@
 import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
-import Watchlist from './watchlist';
 import { stockList } from '../stocks/watchlist';
 import TransactionForm from './transaction_form';
+import { handleBigNum } from '../../util/number_util';
+
 // import Footer from '../footer/footer';
 const tabs = [
     { title: 'Buy', Shares: 0, price: 0, credit: "Estimated Cost", hint: "Buying Power Available"},
@@ -27,12 +28,15 @@ class StockShow extends React.Component {
         }
     }
     handleFetch(ticker) {
-        this.props.fetchStock(ticker).then(stocks => {
-            this.setState(stocks)}).then(() => {
+        this.props.fetchStock(ticker).then(
+            stocks => this.setState(stocks)).then(() => {
                 const lessDescription = this.state.stock.description.substring(0, 240);
                 const moreDescription = this.state.stock.description.substring(240);
                 this.setState({ lessDescription: lessDescription, moreDescription: moreDescription });
             });
+        this.props.fetchStockStatistics(ticker).then(stats => {
+            this.setState(stats)
+        });
     }
     myFunction() {
         var dots = document.getElementById("dots");
@@ -52,25 +56,31 @@ class StockShow extends React.Component {
     render() {
         const { currentUser, logout} = this.props;
         let stockInfo;
-        if (this.state) {
+        window.handleBigNum = handleBigNum;
+        if (this.state && this.state.stock && this.state.stats) {
             const tags = this.state.stock.tags.map(tag => {
                 return <li className="tag" key={tag}>{tag}</li>
             });
             stockInfo =
                 <div className="stock-panel">
-                    <div className="tags">
+                    <div className="panel-all-1 tags">
                         <ul>{tags}</ul>
                     </div>
-                    <h1 className="stock-name">{this.state.stock.companyName}</h1>
-                        <h2 className="about-h2">About</h2>
-                        <p className="about-p">{this.state.lessDescription}
+                    <h1 className="panel-all-2">{this.state.stock.companyName}</h1>
+                        <h2 className="panel-all-3 about-h2">About</h2>
+                            <p className="panel-all-4">{this.state.lessDescription}
                             <span id="dots">...</span>
                             <span id="more">{this.state.moreDescription}</span>
                         </p>
-                        <a onClick={this.myFunction} id="read-more-link">Read more</a>
-                        <span className="about-ceo"><span className="bold">CEO</span><br/>{this.state.stock.CEO}</span>
-                <span className="about-company-name"><span className="bold">Company Name</span><br />{this.state.stock.companyName}</span>
-                <span className="about-hq"><span className="bold">Headquarters</span><br />{this.state.stock.city}</span>           
+                        <a onClick={this.myFunction} id="read-more-link" className="panel-all-3">Read more</a>
+                <span className="cell-1-1"><span className="bold">CEO</span><br/>{this.state.stock.CEO}</span>
+                <span className="cell-1-2"><span className="bold">Company Name</span><br />{this.state.stock.companyName}</span>
+                <span className="cell-1-3"><span className="bold">Headquarters</span><br />{this.state.stock.city}</span>   
+                <span className="cell-1-4"><span className="bold">Market Cap</span><br />{handleBigNum(this.state.stats.marketcap)}</span>   
+                <span className="cell-2-1"><span className="bold">Price-Earnings-Ratio</span><br />{this.state.stats.peRatio}</span>   
+                <span className="cell-2-2"><span className="bold">Employees</span><br />{this.state.stats.employees}</span>   
+                <span className="cell-2-3"><span className="bold">52 Week High</span><br />{this.state.stats.week52high}</span>   
+                <span className="cell-2-4"><span className="bold">52 Week Low</span><br />{this.state.stats.week52low}</span>
                 </div>
         }
         else

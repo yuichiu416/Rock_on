@@ -4,7 +4,7 @@ export default (state = {}, action) => {
     Object.freeze(state);
     switch(action.type){
         case RECEIVE_STOCK_COMPANY:
-            const stock = action.stock;
+            let stock = action.stock;
             return Object.assign({}, {
                 [stock.symbol]:{
                     companyName: stock.companyName,
@@ -29,6 +29,30 @@ export default (state = {}, action) => {
             });
         case RECEIVE_STOCKS:
             return Object.assign({}, action.stocks);
+        case RECEIVE_STOCK_STATS:
+            let stats = action.stats;
+            return Object.assign({}, {
+                [action.ticker]: {
+                    marketcap: stats.marketcap,
+                    employees: stats.employees,
+                    peRatio: stats.peRatio,
+                    // website: stats.website,
+                    // description: stats.description,
+                    // CEO: stats.CEO,
+                    // securityName: stats.securityName,
+                    // issueType: stats.issueType,
+                    // section: stats.sector,
+                    // employees: stats.employees,
+                    // tags: stats.tags,
+                    // address: stats.address,
+                    // address2: stats.address2,
+                    // state: stats.state,
+                    // city: stats.city,
+                    // zip: stats.zip,
+                    // country: stats.country,
+                    // phone: stats.phone
+                }
+            });
         default:
             return state;
     }
