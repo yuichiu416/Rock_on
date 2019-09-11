@@ -3,98 +3,67 @@ A full-stack project. Clone of [Robinhood](https://robinhood.com/)
 
 The milestones will be updated below
 
-9/2 W15D1
+9/2 
 * Finished sign up/sign in functionality and set up some of the backend stuff/views
 
-
-
-# Frontend routes
-Our components are organized as follows:
-* Root
-  * App
-    * NavBar
-    * (main component goes here)
-    * Footer
-
-The following routes, defined in `App`, will render components between `NavBar` and `Footer`
-* `/`
-  * RootNavBar - *Home icon*, *Search bar*, *Free Stock*, *Home*, *Notifications*, *Account*
-  * PageContainer
-    * ProfileOverviewContainer
-      * ProfileOverviewComponent - shows *total value*, *change*, display in *1D*, *1W*, *1M*, *3M*, *1Y*, *ALL*
-    * AdComponent - some random ads from our partners
-    * PopularCollectionsContainer
-      * PopularCollections - top movers
-        * PopularCollectionItem - such as *100 Most Popular*, *Technology*
-    * TopMoversContainer
-      * TopMovers - top 4 items that changed the most
-    * NewsContainer
-      * NewsComponent - news list
-        * NewsItem
-    * WatchlistContainer
-      * WatchlistComponent - watchlist list
-        * WatchlistItem - shows *Name*, *Price*, *Shares* (if applicable) and *Today*
-
-* `/login`
-  * PageContainer
-    * SessionForm
-
-* `/signup`
-  * PageContainer
-    * SessionForm
-
-* `/account`
-  * PageContainer
-    * AccountNavBar - shows *Account*, *Banking*, *History*, *Documents*, *Free Stocks*, *Settings*
-
-    * PortfolioContainer
-      * PortfolioComponent
-        * PortfolioSummary - *Total Portfolio Value*, *Stocks & Options* and *Cash* value
-        * StocksSummary - *Name*, *Symbol*, *Shares*, *Price*, *Average Cost*, *Total Return* and *Equity*
+9/4
+* Polished the navbar, using flex container
   
-  * `/account/banking`
-    * PageContainer
-      * LinkedAccountContainer
-        * LinkedAccountComponent - *credit card info*
-      * CompletedTransferContainer
-        * CompletedTransferComponent - *account name*, *date* and *amount*
-      * DepositFundsContainer
-        * DepositFundsComponent - *From* an account *to* another account and *amount*
-  * `/account/history`
-    * PageContainer
-      * RecentTransactionContainer
-        * RecentTransactionComponent
-      *  OlderTransctionContainer
-         *  OlderTransctionComponent
-      *  FilterContainer
-         *  FilterComponent
-  * `/account/documents`
-    * PageContainer
-      *  DocumentComponent
-  * `/account/freestocks`
-    * PageContainer
-      * Freeestocksmponent
-  * `/account/settings*`
-    * PageContainer
-      * SettingsComponent
+9/5
+* Implemented all functional requirements from Trevor
 
+Functionality
+  - [x] The main button with logo should link to `/`
+  - [x] Has working demo login
+  - [x] Smooth, bug free navigation
+​
 
-* `/stocks/:stockName`
-  * PageContainer
-    * OwnedStockSummaryComponent if owns any shares
-    * AboutComponent - *Your Equity* (total value), *Cost*, *Today's Return*, *Total Return*. *Your Average Cost*, *Shares*, *Portfolio Diversity*, *Cash Held for Exercise*.
-    * CollectionContainer
-      * CollectionComponent - collections list
-        * CollectionItem - the collections the stock is in
-    * NewsContainer
-      * NewsComponent
-        * NewsItem
-    * AnalystRatingsContainer
-      * AnalystRatingsComponent 
-    * EarningsComponent
-    * History Container
-      * HistoryComponent
-    * PeopleAlsoBoughtContainer
-      * PeopleAlsoBoughtComponent
-    * TransactionContainer
-      * TransactionComponent - floating on the right side of the screen, *buy/sell stock*, *Shares number*, *Market Price*, *Estimated Cost*, *Available Buying Power*
+Before Login
+  - [x] The `/login` page should not display a link to `Log In`. Same for `/signup`
+  - [x] Going to a random route `/#/oweiniouewbrviuwebv` should redirect or display a 404 page
+  - [x] Errors should display for both `/signup` and `/login`.
+  - [x] Errors should clear when moving between `/signup` and `/login`.
+  - [x] Can sign up a user
+  - [x] Can sign in as a user
+  - [x] Can log out a user
+  - [x] Can't sign up with the same username/email
+  - [x] Pressing enter after filling out the session form should use the form data, not the demo user
+​
+
+After Login
+  - [x] Should not be able to visit `/login` or `/signup`
+  - [x] Should be able to refresh the page and still be logged in
+​
+
+​Style
+- [ ] The site should look exactly like the actual site
+- [x] All relevant elements should have `cursor: pointer` on hover
+- [x] When errors are displayed, most elements should not move around the page (particularly input boxes)
+- [ ] Remove Redux logger and all console.log()'s from production
+
+Seeds
+  - [ ] Adequate and appropriate seeds
+
+9/6
+* Refactored the code
+* Added a search form with icon
+
+9/7
+* Refactored the code, Use only one session form.
+* Ready for stock api test
+* Read the document
+
+9/8
+* Cleaned up scss files, organized them properly
+
+9/9
+* Deployed to Heroku, fixed bugs
+* Can fetch and display stocks from the api, needs to render them properly
+
+9/10
+* Finished the stock panel, can display all available stocks
+* Implemented search function and kayboard navigation
+* Added mouse hover effect on the search result
+
+9/11
+* Finished the transaction box
