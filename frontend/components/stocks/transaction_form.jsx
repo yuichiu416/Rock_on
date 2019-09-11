@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 
 class Header extends Component{
@@ -7,14 +6,14 @@ class Header extends Component{
         const selected = this.props.selected;
         const headers = this.props.tabs.map((tab, idx) => {
             const title = tab.title;
-            const klass = idx === selected ? "active" : '';
+            const cName = idx === selected ? "buy-sell-selected" : '';
             return (
-                <li
+                <span
                     key={idx}
-                    className={klass}
+                    className={cName}
                     onClick = {() => this.props.onTabChosen(idx)}>
-                    {title}{' '}
-                </li>
+                    <p>{title}</p>{' '}
+                </span>
             );
         });
         return (
@@ -30,36 +29,50 @@ export default class TransactionForm extends Component {
             selected: 0,
             price: 0, 
             credit: 0,
-            shares: 0
+            shares: 0,
+            hint: ""
         };
         this.selectTab = this.selectTab.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
     selectTab(num){
         this.setState({selected : num});
     }
-    updateShares(e){
-        console.log(e);
-        this.setState({shares: 0});
+    handleInput(e){
+        this.setState({ shares: e.currentTarget.value });
     }
 
     render() {
         return (
             <form className="transaction-form">
-                <Header selected={this.state.selected}
-                    onTabChosen={this.selectTab}
-                    tabs={this.props.tabs} />
-                <label className="left-label">Shares:</label>
-                    <input className="share-input" type="text" value={this.state.price} onChange={this.updateShares}/>
-                <br />
-                <label>
-                    Market Price:{this.state.price}
-                </label>
-                <br/>
-                <label>
-                    {this.props.tabs[this.state.selected].credit}:{this.state.credit}
-                </label>
+                <div className="item1">
+                    <Header selected={this.state.selected}
+                        onTabChosen={this.selectTab}
+                        tabs={this.props.tabs} />
+                </div>
+                <div className="item2">
+                    <span className="left-label">Shares:</span>
+                    <input className="share-input" type="text" placeholder="0" value={this.state.shares} onChange={this.handleInput} />
+                </div>
+                <div className="item3">
+                    <label className="market-price">
+                        Market Price:
+                    </label>
+                    <span className="market-price-value">${this.state.price}</span>
+                </div>
+                <div className="item4">
+                    <label className="estimated">
+                        {this.props.tabs[this.state.selected].credit}:
+                    </label>
+                    <span className="estimated-value">${this.state.credit}</span>
+                </div>
+                <div className="item5">
+                    <input type="submit" className="review-order-btn " value="Review Order" />
+                </div>
+                <div className="item6">
+                    <span className="product-hint">${`1000`} {this.props.tabs[this.state.selected].hint}</span>
+                </div>
             </form>
         );
     }
 };
-

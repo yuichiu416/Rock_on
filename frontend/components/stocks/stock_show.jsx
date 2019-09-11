@@ -5,8 +5,8 @@ import { stockList } from '../stocks/watchlist';
 import TransactionForm from './transaction_form';
 // import Footer from '../footer/footer';
 const tabs = [
-    { title: 'Buy', Shares: 0, price: 0, credit: "Estimated Cost" },
-    { title: 'Sell', Shares: 0, price: 0, credit: "Estimated Credit" }
+    { title: 'Buy', Shares: 0, price: 0, credit: "Estimated Cost", hint: "Buying Power Available"},
+    { title: 'Sell', Shares: 0, price: 0, credit: "Estimated Credit", hint: "Shares Available" }
 ];
 
 class StockShow extends React.Component {

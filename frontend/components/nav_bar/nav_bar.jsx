@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link, Redirect } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 class NavBar extends React.Component{
@@ -32,8 +32,11 @@ class NavBar extends React.Component{
             this.setState({index: index})
         });
         document.addEventListener("mouseover", (e) => {
+            if(!e.target.firstChild || !e.target.firstChild.id)
+                return;
             if(e.target.localName === "li"){
-                this.setState({ index: parseInt(e.target.firstChild.id.replace("match-", ""))});
+                    let target = e.target.firstChild.id;
+                this.setState({ index: parseInt(target.replace("match-", ""))});
             }
         });
     }
