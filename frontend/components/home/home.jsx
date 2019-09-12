@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../nav_bar/nav_bar';
-import Stock from '../stocks/stock_index';
+import Stock from '../stocks/stock_index_container';
 import { stockList } from '../stocks/watchlist';
 
 import { AuthRoute, ProtectedRoute, BinaryRoute } from '../../util/route_util';

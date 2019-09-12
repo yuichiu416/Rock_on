@@ -10,7 +10,13 @@ Share.destroy_all
 Stock.destroy_all
 User.destroy_all
 Watchlist.destroy_all
+Deposit.destroy_all
 
 User.create(username: 'Demo',
             email: 'demo@demo.com',
             password: '123456')
+
+Deposit.create(user_id: 1, amount: 500);
+Deposit.create(user_id: 1, amount: -500);
+Deposit.create(user_id: 1, amount: 1000);
+Deposit.create(user_id: 1, amount: -200);

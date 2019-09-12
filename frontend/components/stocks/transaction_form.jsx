@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { makeDeposit } from '../../actions/stock_actions';
 
 class Header extends Component{
     render() {
@@ -27,24 +27,32 @@ export default class TransactionForm extends Component {
         super(props);
         this.state = {
             selected: 0,
-            price: 0, 
-            credit: 0,
-            shares: 0,
+            cost: 0, 
+            shares: "",
             hint: ""
         };
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     selectTab(num){
         this.setState({selected : num});
     }
     handleInput(e){
-        this.setState({ shares: e.currentTarget.value });
+        const val = e.currentTarget.value
+        this.setState({ shares: val, cost: val * this.props.price });
+    }
+    handleSubmit(e){
+        e.preventDefault();
+        if (this.state.cost > this.props.balance)
+            alert("Not enough balance");
+        else
+            makeDeposit(-this.state.cost);
     }
 
     render() {
         return (
-            <form className="transaction-form">
+            <form className="transaction-form" onSubmit={this.handleSubmit}>
                 <div className="item1">
                     <Header selected={this.state.selected}
                         onTabChosen={this.selectTab}
@@ -58,19 +66,19 @@ export default class TransactionForm extends Component {
                     <label className="market-price">
                         Market Price:
                     </label>
-                    <span className="market-price-value">${this.state.price}</span>
+                    <span className="market-price-value">${this.props.price}</span>
                 </div>
                 <div className="item4">
                     <label className="estimated">
                         {this.props.tabs[this.state.selected].credit}:
                     </label>
-                    <span className="estimated-value">${this.state.credit}</span>
+                    <span className="estimated-value">${this.state.cost}</span>
                 </div>
                 <div className="item5">
                     <input type="submit" className="review-order-btn " value="Review Order" />
                 </div>
                 <div className="item6">
-                    <span className="product-hint">${`1000`} {this.props.tabs[this.state.selected].hint}</span>
+                    <span className="product-hint">${this.props.balance} {this.props.tabs[this.state.selected].hint}</span>
                 </div>
             </form>
         );

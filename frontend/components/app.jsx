@@ -4,7 +4,7 @@ import LoginContainer from './session/login_container';
 import { AuthRoute, ProtectedRoute} from '../util/route_util';
 import HomeContainer from './home/home_container'; 
 import StockShowContainer from './stocks/stock_show_container'; 
-import { Route, Redirect, Switch, Link } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 export default () => {
     return (

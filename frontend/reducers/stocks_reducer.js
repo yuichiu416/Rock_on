@@ -1,4 +1,4 @@
-import { RECEIVE_STOCK_COMPANY, RECEIVE_STOCKS, RECEIVE_STOCK_STATS } from '../actions/stock_actions';
+import { RECEIVE_STOCK_COMPANY, RECEIVE_STOCKS } from '../actions/stock_actions';
 
 export default (state = {}, action) => {
     Object.freeze(state);
@@ -6,7 +6,7 @@ export default (state = {}, action) => {
         case RECEIVE_STOCK_COMPANY:
             let stock = action.stock;
             return Object.assign({}, {
-                [stock.symbol]:{
+                [action.ticker]:{
                     companyName: stock.companyName,
                     exchange: stock.exchange,
                     industry: stock.industry,
@@ -25,18 +25,6 @@ export default (state = {}, action) => {
                     zip: stock.zip,
                     country: stock.country,
                     phone: stock.phone
-                }
-            });
-        case RECEIVE_STOCKS:
-            return Object.assign({}, action.stocks);
-        case RECEIVE_STOCK_STATS:
-            let stats = action.stats;
-            return Object.assign({}, {
-                [action.ticker]: {
-                    marketcap: stats.marketcap,
-                    employees: stats.employees,
-                    peRatio: stats.peRatio,
-                    dividendYield: stats.dividendYield
                 }
             });
         default:

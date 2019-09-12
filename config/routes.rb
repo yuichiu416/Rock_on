@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:new, :create]
   resources :stocks, only: [:index, :show]
-
+  resources :deposits, only: [:create, :show]
+  
   post 'stocks/:stockName/watchlist', to: 'stocks#add'
   delete 'stocks/:stockName/watchlist', to: 'stocks#remove'
   post 'stocks/:stockName', to: 'stocks#trade'

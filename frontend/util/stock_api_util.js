@@ -17,3 +17,9 @@ export const fetchStockStats = ticker => (
         url: `https://cloud.iexapis.com/stable/stock/${ticker}/stats/?token=${myApiKey}`
     })
 );
+
+export const fetchStockPrice = ticker => (
+    $.ajax({
+        url: `https://cloud.iexapis.com/stable/tops?symbols=${ticker}&token=${myApiKey}`
+    })
+);
