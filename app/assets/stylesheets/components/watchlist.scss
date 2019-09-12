@@ -21,6 +21,9 @@
 .watchlist td{
     border: 1px solid black;
 }
+.watchlist td a:hover{
+    color: red;
+}
 .watchlist-header th{
     font-weight: bold;
     font-size: 24px;

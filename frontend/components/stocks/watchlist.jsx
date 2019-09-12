@@ -46,12 +46,11 @@ class Watchlist extends Component{
         const trs = stockList.map((ticker, idx) => {
             return (
                 <tr key={ticker}>
-                    <td>{idx}</td>
+                    <td><Link to={`/stocks/${ticker}`}>{idx}</Link></td>
                     <td><Link to={`/stocks/${ticker}`}>{ticker}</Link></td>
                 </tr>
             );
         });
-
         return (
             <Paper className="watchlist">
                 <Table>

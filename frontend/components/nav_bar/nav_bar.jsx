@@ -13,9 +13,9 @@ class NavBar extends React.Component{
         this.handleInput = this.handleInput.bind(this);
     }
     componentDidMount(){
-        let lastIdx = this.matches().length - 1;
-        let index = this.state.index;
         document.addEventListener("keydown", (e) => {
+            let lastIdx = this.matches().length - 1;
+            let index = this.state.index;
             if(e.key === "Enter"){
                 document.getElementById(`match-${index}`).click();
             }

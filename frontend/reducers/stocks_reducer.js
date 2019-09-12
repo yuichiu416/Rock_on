@@ -36,21 +36,7 @@ export default (state = {}, action) => {
                     marketcap: stats.marketcap,
                     employees: stats.employees,
                     peRatio: stats.peRatio,
-                    // website: stats.website,
-                    // description: stats.description,
-                    // CEO: stats.CEO,
-                    // securityName: stats.securityName,
-                    // issueType: stats.issueType,
-                    // section: stats.sector,
-                    // employees: stats.employees,
-                    // tags: stats.tags,
-                    // address: stats.address,
-                    // address2: stats.address2,
-                    // state: stats.state,
-                    // city: stats.city,
-                    // zip: stats.zip,
-                    // country: stats.country,
-                    // phone: stats.phone
+                    dividendYield: stats.dividendYield
                 }
             });
         default:
