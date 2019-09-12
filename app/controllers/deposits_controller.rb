@@ -1,7 +1,7 @@
 class DepositsController < ApplicationController
   def create
     @deposit = Deposit.new(deposit_params)
-    debugger;
+    @deposit.user_id = current_user.id
     if @deposit.save
       render json: ['successfully made the tranaction'], status:200
     else

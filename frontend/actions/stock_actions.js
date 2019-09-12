@@ -36,10 +36,10 @@ const receiveStockPrice = (stock) => ({
 export const getStockPrice = ticker => dispatch => (
     fetchStockPrice(ticker).then(stock => dispatch(receiveStockPrice(stock)))
 );
-export const makeDeposit = deposit => dispatch => (
-    postDeposit(deposit).then(deposit => 
+export const makeDeposit = amount => dispatch => {
+    postDeposit(amount).then(deposit => 
         dispatch(receiveDeposit(deposit)))
-);
+};
 export const fetchTransactions = user_id => dispatch => (
     showAllDeposits(user_id).then(deposits => 
         dispatch(receiveDeposits(deposits)))

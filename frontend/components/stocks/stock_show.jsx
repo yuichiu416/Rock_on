@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
 import { stockList } from '../stocks/watchlist';
-import TransactionForm from './transaction_form';
+import TransactionForm from './transaction_form_container';
 import { handleBigNum } from '../../util/number_util';
 
 // import Footer from '../footer/footer';
@@ -25,11 +25,6 @@ class StockShow extends React.Component {
             this.handleFetch(ticker);
         }
     }
-    calculateBalance(deposits) {
-        if (!deposits)
-            return;
-        this.setState({ balance: deposits.reduce((a, b) => a + b) });
-    }
     handleFetch(ticker) { // "AMD"
         this.props.fetchStock(ticker).then(
             stocks => this.setState(stocks)).then(() => {
@@ -39,7 +34,6 @@ class StockShow extends React.Component {
             });
         this.props.fetchStockStatistics(ticker);
         this.props.getStockPrice(ticker);
-        this.props.fetchTransactions(this.props.currentUser.id).then(() => this.calculateBalance(this.props.deposits.deposit));
     }
     toggleMoreLess() {
         var dots = document.getElementById("dots");
