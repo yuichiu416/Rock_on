@@ -17,7 +17,9 @@ User.create(username: 'Demo',
             email: 'demo@demo.com',
             password: '123456')
 
-Deposit.create(user_id: 1, amount: 500);
-Deposit.create(user_id: 1, amount: 500);
-Deposit.create(user_id: 1, amount: 1000);
-Deposit.create(user_id: 1, amount: 1000);
+Deposit.create(user_id: 1, amount: 5000);
+Transaction.create(user_id: 1, ticker: "MSFT", price: 138, num_shares: 7);
+Transaction.create(user_id: 1, ticker: "AMD", price: 30, num_shares: 50);
+Transaction.create(user_id: 1, ticker: "DIS", price: 137, num_shares: 7);
+Transaction.create(user_id: 1, ticker: "INTC", price: 52, num_shares: 3);
+Transaction.create(user_id: 1, ticker: "AAPL", price: 217, num_shares: 6);

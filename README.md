@@ -40,10 +40,10 @@ The milestones are as below:
   - [ ] The site should look exactly like the actual site
   - [x] All relevant elements should have `cursor: pointer` on hover
   - [x] When errors are displayed, most elements should not move around the page (particularly input boxes)
-  - [ ] Remove Redux logger and all console.log()'s from production
+  - [x] Remove Redux logger and all console.log()'s from production
 
   Seeds
-    - [ ] Adequate and appropriate seeds
+    - [x] Adequate and appropriate seeds
 
 9/6
 * Refactored the code
@@ -68,3 +68,11 @@ The milestones are as below:
 
 9/11
 * Finished the transaction box
+
+9/12
+* Refactored the code, use a transaction_form_container to handle the props
+* Removed all unnecessary states, use props instead
+
+9/13
+* Buy/Sell stocks function working properly
+* Fixed all known bugs
