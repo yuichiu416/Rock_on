@@ -55,7 +55,6 @@ class NavBar extends React.Component{
                 matches.push(stock);
             }
         });
-
         if (matches.length === 0) {
             matches.push('No matches');
         }
@@ -87,7 +86,6 @@ class NavBar extends React.Component{
                         <input type="text" placeholder="Search.." onChange={this.handleInput} value={this.state.inputVal}/>
                         {searchResults}
                     </form>
-
                 </div>
                 <div className="loggedin-nav-links">
                     <NavLink to="/" className="loggedin-nav-link">Home</NavLink>

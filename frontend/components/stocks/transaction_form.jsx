@@ -98,7 +98,6 @@ export default class TransactionForm extends Component {
         } else{
             text = `${this.state.available_shares} ${this.props.tabs[tabIdx].hint}`;
         }
-        
         return (
             <form className="transaction-form" onSubmit={this.handleSubmit}>
                 <div className="item1">

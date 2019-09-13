@@ -5,7 +5,6 @@ class Stock extends Component {
     constructor(props) {
         super(props);
     }
-
     render() {
         return (
             <div className="stock">
@@ -14,5 +13,6 @@ class Stock extends Component {
             </div>
         )
     }
-}
+};
+
 export default Stock;
