@@ -5,11 +5,6 @@ export const fetchStockCompany = (ticker) => {
         url: `https://cloud.iexapis.com/stable/stock/${ticker}/company/?token=${myApiKey}`
     });
 };
-export const fetchStocks = () => (
-    $.ajax({
-        url: 'stocks'
-    })
-);
 export const fetchStockStats = ticker => (
     $.ajax({
         url: `https://cloud.iexapis.com/stable/stock/${ticker}/stats/?token=${myApiKey}`

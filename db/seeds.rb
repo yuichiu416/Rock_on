@@ -6,18 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Share.destroy_all
-Stock.destroy_all
 User.destroy_all
-Watchlist.destroy_all
 Deposit.destroy_all
 Transaction.destroy_all
 
-User.create(username: 'Demo',
-            email: 'demo@demo.com',
-            password: '123456')
+User.create(username: 'Demo',email: 'demo@demo.com', password: '123456')
 
 Deposit.create(user_id: 1, amount: 5000);
+
 Transaction.create(user_id: 1, ticker: "MSFT", price: 138, num_shares: 7);
 Transaction.create(user_id: 1, ticker: "AMD", price: 30, num_shares: 50);
 Transaction.create(user_id: 1, ticker: "DIS", price: 137, num_shares: 7);

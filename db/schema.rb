@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_235949) do
+ActiveRecord::Schema.define(version: 2019_09_13_193114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,25 +21,6 @@ ActiveRecord::Schema.define(version: 2019_09_12_235949) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_deposits_on_user_id"
-  end
-
-  create_table "shares", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "stock_id"
-    t.integer "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "stock_id"], name: "index_shares_on_user_id_and_stock_id", unique: true
-  end
-
-  create_table "stocks", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "symbol", null: false
-    t.boolean "in_watchlist", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_stocks_on_name", unique: true
-    t.index ["symbol"], name: "index_stocks_on_symbol", unique: true
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -63,13 +44,6 @@ ActiveRecord::Schema.define(version: 2019_09_12_235949) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_digest"], name: "index_users_on_password_digest", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
-  end
-
-  create_table "watchlists", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_watchlists_on_user_id", unique: true
   end
 
 end
