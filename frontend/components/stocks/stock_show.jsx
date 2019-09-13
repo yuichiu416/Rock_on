@@ -56,15 +56,16 @@ class StockShow extends React.Component {
         if(this.props.price)
             price = this.props.price.toFixed(2);
         if (this.props.stock && this.props.stats) {
-            const { CEO, companyName, city, tags } = this.props.stock;
-            const { website, marketcap, peRatio, employees, week52high, week52low } = this.props.stats;
+            const { CEO, companyName, city, tags, website } = this.props.stock;
+            const { marketcap, peRatio, employees, week52high, week52low } = this.props.stats;
+            console.log(this.props.stats);
             const taglist = tags.map(tag => {
                 return <li className="tag red" key={tag}>{tag}</li>
             });
             stockInfo =
                 <div className="stock-panel">
                     <div className="panel-all-1 tags"><ul>{taglist}</ul></div>
-                    <h1 className="panel-all-2"><a href={website} className="hover-text-underline">{companyName}</a><br/><br/>${price}</h1>
+                <h1 className="panel-all-2"><a href={website} className="hover-text-underline no-text-decoration">{companyName}</a><br/><br/>${price}</h1>
                     <h2 className="panel-all-3 about-h2">About</h2>
                     <p className="panel-all-4">{this.state.lessDescription}
                         <span id="dots">...</span>

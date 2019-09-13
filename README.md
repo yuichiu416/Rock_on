@@ -10,7 +10,9 @@ A full-stack project. Clone of [Robinhood](https://robinhood.com/)
   
 
 ## Featrues
-* Real stock data
-* Ability to purchase/sell stocks and update in real-time
-* Ability to search all available stocks with keyboard navigation
+* Real stock data 
+  <img src="./app/assets/images/stock_data.jpg" width="500"/>
+* Ability to purchase/sell stocks and update in real-time 
+  <img src="./app/assets/images/transaction.gif" width="500" />
+* Ability to search all available stocks with keyboard navigation <img src="./app/assets/images/search.gif" width="500" />
 

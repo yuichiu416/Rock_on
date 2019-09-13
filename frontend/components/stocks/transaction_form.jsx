@@ -77,11 +77,11 @@ export default class TransactionForm extends Component {
             amount *= -1;
             this.props.makeDeposit({amount: amount});
             this.props.buyStock({price: price, num_shares: shares, ticker: ticker});
-            this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: shares});
+            this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: parseInt(this.state.available_shares) + parseInt(shares)});
         } else{ // sell
             this.props.makeDeposit({ amount: amount});
             this.props.buyStock({ price: price, num_shares: shares * -1, ticker: ticker });
-            this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: this.state.available_shares - shares});
+            this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: parseInt(this.state.available_shares) - parseInt(shares)});
         }
     }
     handleFreeDeposit(e){
@@ -118,7 +118,7 @@ export default class TransactionForm extends Component {
                 </div>
                 <div className="item4">
                     <label className="estimated margin-left-20px">{this.props.tabs[this.state.selected].credit}:</label>
-                    <span className="estimated-value margin-right-20px">${this.state.cost}</span>
+                    <span className="estimated-value margin-right-20px">${this.state.cost.toFixed(2)}</span>
                 </div>
                 <div className="item5">
                     <input type="submit" className="green-btn margin-auto" value="Submit Order" />

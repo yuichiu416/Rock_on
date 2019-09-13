@@ -12,7 +12,7 @@ export default (state = {}, action) => {
                     peRatio: stats.peRatio,
                     dividendYield: stats.dividendYield,
                     week52high: stats.week52high,
-                    week52low: stats.week52low
+                    week52low: stats.week52low,
                 }
             });
         default:
