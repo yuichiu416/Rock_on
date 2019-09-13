@@ -17,7 +17,11 @@ A full-stack project. Clone of [Robinhood](https://robinhood.com/)
 * Ability to purchase/sell stocks and update in real-time 
   <img src="./app/assets/images/transaction.gif" width="800" />
 
-* Ability to search all available stocks with keyboard navigation <img src="./app/assets/images/search.gif" width="800" />
+* Ability to search all available stocks with keyboard navigation 
+  <img src="./app/assets/images/search.gif" width="800" />
+
+* Css animation
+  <img src="./app/assets/images/animation.gif" width="800" />
 
 ## Code snippet example
 ```jsx

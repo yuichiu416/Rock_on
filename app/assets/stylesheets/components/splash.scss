@@ -6,7 +6,7 @@
   font-size: 52px;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .left {
   width: 50%;
@@ -40,7 +40,7 @@
 }
 .pane1 p {
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 5px 0;
   font-weight: lighter;
 }
@@ -60,26 +60,29 @@
 }
 .hidable{
   display: none;
+  width: 300px;
+  height: auto;
   position: absolute;
-  left: -1px;
+  top: 380px;
+  left: 330px;
   font-size: 14px;
-  white-space: nowrap;
   background: #fff;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  overflow: hidden;
-}
-.hidable:hover{
-    display: block;
+  z-index: 1;
 }
 .disclosure{
   color: green;
   align-self: flex-start;
   text-align:left;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+.disclosure:hover{
+  text-decoration: underline;
 }
 .banner2{
   width: 100%;
