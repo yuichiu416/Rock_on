@@ -41,8 +41,7 @@ const receiveStockStats = (ticker, stats) => ({
 const receiveStockPrice = (stock) => ({
     type: RECEIVE_STOCK_PRICE,
     stock
-})
-
+});
 export const getStockPrice = ticker => dispatch => (
     fetchStockPrice(ticker).then(stock => dispatch(receiveStockPrice(stock)))
 );

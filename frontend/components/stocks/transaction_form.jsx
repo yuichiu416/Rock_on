@@ -33,7 +33,6 @@ export default class TransactionForm extends Component {
         };
         const user_id = this.props.currentUser.id;
         const ticker = this.props.match.params.ticker;
-
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,31 +62,36 @@ export default class TransactionForm extends Component {
         const price = this.props.price;
         const shares = this.state.shares;
         const selected = this.state.selected;
-        if (this.state.cost > this.props.balance && selected === 0){
+        const available_shares = this.state.available_shares
+        let amount = this.state.cost;
+        if(shares === 0){
+            alert("Share amount can't be 0!");
+        } else if (selected === 0 && (amount > this.state.balance)){
             alert("Not enough balance");
-            this.setState({share: 0});
-        } else if (this.state.available_shares <= 0 && selected === 1){
-            alert("No shares to sell");
-            this.setState({ share: 0 });
-        } else if(this.state.selected === 0){ // buy
-            const amount = this.state.cost * -1;
+            this.setState({shares: 0});
+        } else if (selected === 1 && (available_shares < shares || available_shares === 0)){
+            alert("Not enough shares to sell");
+            this.setState({ shares: 0 });
+        } else if(selected === 0){ // buy
+            amount *= -1;
             this.props.makeDeposit({amount: amount});
             this.props.buyStock({price: price, num_shares: shares, ticker: ticker});
-            this.setState({balance: this.state.balance + amount, shares: 0});
+            this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: shares});
         } else{ // sell
-            const amount = this.state.cost
             this.props.makeDeposit({ amount: amount});
             this.props.buyStock({ price: price, num_shares: shares * -1, ticker: ticker });
-            this.setState({ balance: this.state.balance - amount, shares: 0});
+            this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: this.state.available_shares - shares});
         }
     }
     render() {
         const tabIdx = this.state.selected;
         let text;
-        if(tabIdx === 0)
-            text = `\$${this.state.balance} ${this.props.tabs[tabIdx].hint}`;
-        else
+        if(tabIdx === 0){
+            if(typeof(this.state.balance) === "number")
+                text = `${this.state.balance.toFixed(2)} ${this.props.tabs[tabIdx].hint}`;
+        } else{
             text = `${this.state.available_shares} ${this.props.tabs[tabIdx].hint}`;
+        }
         
         return (
             <form className="transaction-form" onSubmit={this.handleSubmit}>
