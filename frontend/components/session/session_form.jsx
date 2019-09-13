@@ -32,12 +32,32 @@ class SessionForm extends React.Component {
     }
     handleDemo(e) {
         e.preventDefault();
-        this.state = {
-            username: 'Demo',
-            password: '123456',
-        };
-        this.props.login(this.state)
-            .then(() => this.props.history.push('/'));
+        const username = 'Demo'.split('');
+        this.handleDemoUsername(username);
+    }
+    handleDemoUsername(username) {
+        setTimeout(() => {
+            this.setState({ username: this.state.username + username.shift() }, () => {
+                if (username.length === 0) {
+                    const password = '123456'.split('');
+                    this.handleDemoPassword(password);
+                } else {
+                    this.handleDemoUsername(username);
+                }
+            });
+        }, 150);
+    }
+    handleDemoPassword(password) {
+        setTimeout(() => {
+            this.setState({ password: this.state.password + password.shift() }, () => {
+                if (password.length === 0) {
+                    this.props.login(this.state)
+                        .then(() => this.props.history.push('/'));
+                } else {
+                    this.handleDemoPassword(password);
+                }
+            });
+        }, 150);
     }
     render() {
         const { errors, formType } = this.props;
