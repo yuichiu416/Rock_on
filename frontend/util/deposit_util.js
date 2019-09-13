@@ -13,3 +13,17 @@ export const showAllDeposits = ( user_id ) => {
         method: 'GET'
     });
 };
+
+export const postTransaction = transaction => {
+    return $.ajax({
+        url: `/transactions`,
+        method: 'POST',
+        data: { transaction }
+    });
+};
+export const getTransactions = (user_id, ticker) => {
+    return $.ajax({
+        url: `/transactions/${user_id}?ticker=${ticker}`,
+        method: 'GET'
+    });
+};

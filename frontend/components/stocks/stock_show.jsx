@@ -6,8 +6,8 @@ import { handleBigNum } from '../../util/number_util';
 
 // import Footer from '../footer/footer';
 const tabs = [
-    { title: 'Buy', Shares: 0, price: 0, credit: "Estimated Cost", hint: "Buying Power Available"},
-    { title: 'Sell', Shares: 0, price: 0, credit: "Estimated Credit", hint: "Shares Available" }
+    { title: 'Buy',  credit: "Estimated Cost", hint: "Buying Power Available"},
+    { title: 'Sell', credit: "Estimated Credit", hint: "Shares Available" }
 ];
 class StockShow extends React.Component {
     constructor(props){

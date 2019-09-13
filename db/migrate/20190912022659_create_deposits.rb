@@ -5,6 +5,7 @@ class CreateDeposits < ActiveRecord::Migration[5.2]
       t.float :amount, null: false
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
+      t.timestamps
     end
     add_index :deposits, :user_id
   end
