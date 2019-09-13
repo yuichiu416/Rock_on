@@ -16,7 +16,6 @@ export default class Home extends Component {
             <div className="home">
                 <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 {display}
-               
             </div>
         )
     }

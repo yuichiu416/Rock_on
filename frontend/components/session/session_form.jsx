@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
         this.handleSignUp = this.handleSignUp.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
-
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
@@ -40,8 +39,6 @@ class SessionForm extends React.Component {
         this.props.login(this.state)
             .then(() => this.props.history.push('/'));
     }
-
-
     render() {
         const { errors, formType } = this.props;
         let errorList, errorUl, email, button;
@@ -51,16 +48,15 @@ class SessionForm extends React.Component {
             ));
             errorUl = <ul>{errorList}</ul>;
         }
-
         if (formType == "Sign Up") {
             email = <label>
-                Email:
+                        Email:
                         <input type="text" value={this.state.email} onChange={this.handleInput("email")} /><br/>
                     </label>;
-            button = <button className="button" onClick={this.handleSignUp}>Sign Up!</button>;
+            button = <button className="green-btn" onClick={this.handleSignUp}>Sign Up!</button>;
         }
         else {
-            button = <button className="button" onClick={this.handleLogIn}>Log In!</button>
+            button = <button className="green-btn" onClick={this.handleLogIn}>Log In!</button>
         }
         return (
             <div className="sessionform">

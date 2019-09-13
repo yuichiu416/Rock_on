@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class Header extends Component{
     render() {
         const selected = this.props.selected;
@@ -19,7 +20,6 @@ class Header extends Component{
         );
     }
 };
-
 export default class TransactionForm extends Component {
     constructor(props){
         super(props);
@@ -36,6 +36,7 @@ export default class TransactionForm extends Component {
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFreeDeposit = this.handleFreeDeposit.bind(this);
         this.props.fetchTransactions(user_id).then(() => this.calculateBalance(this.props.deposits.deposit));
         this.props.getAllStockInfo(user_id, ticker).then(() => this.calculateShares(this.props.transactions.transactions));
     }
@@ -83,6 +84,11 @@ export default class TransactionForm extends Component {
             this.setState({ balance: this.state.balance + amount, shares: 0, cost: 0, available_shares: this.state.available_shares - shares});
         }
     }
+    handleFreeDeposit(e){
+        e.preventDefault();
+        this.props.makeDeposit({ amount: 1000 });
+        this.setState({ balance: this.state.balance + 1000 });
+    }
     render() {
         const tabIdx = this.state.selected;
         let text;
@@ -101,24 +107,27 @@ export default class TransactionForm extends Component {
                         tabs={this.props.tabs} />
                 </div>
                 <div className="item2">
-                    <span className="left-label">Shares:</span>
-                    <input className="share-input" type="text" placeholder="0" value={this.state.shares} onChange={this.handleInput} />
+                    <span className="left-label margin-left-20px">Shares:</span>
+                    <input className="margin-right-20px share-input" type="text" placeholder="0" value={this.state.shares} onChange={this.handleInput} />
                 </div>
                 <div className="item3">
-                    <label className="market-price">
+                    <label className="market-price margin-left-20px">
                         Market Price:
                     </label>
-                    <span className="market-price-value">${this.props.price}</span>
+                    <span className="market-price-value margin-right-20px">${this.props.price}</span>
                 </div>
                 <div className="item4">
-                    <label className="estimated">{this.props.tabs[this.state.selected].credit}:</label>
-                    <span className="estimated-value">${this.state.cost}</span>
+                    <label className="estimated margin-left-20px">{this.props.tabs[this.state.selected].credit}:</label>
+                    <span className="estimated-value margin-right-20px">${this.state.cost}</span>
                 </div>
                 <div className="item5">
-                    <input type="submit" className="review-order-btn " value="Review Order" />
+                    <input type="submit" className="green-btn margin-auto" value="Submit Order" />
                 </div>
                 <div className="item6">
-                    <span className="product-hint">{text}</span>
+                    <span className="margin-auto color-red">{text}</span>
+                </div>
+                <div className="item7">
+                    <button onClick={this.handleFreeDeposit} className="green-btn margin-auto">Deposit $1000 for FREE</button>
                 </div>
             </form>
         );

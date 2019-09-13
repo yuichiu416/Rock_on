@@ -6,8 +6,7 @@
   padding: 0;
   border: 0;
 }
-
-.sessionform-image {
+.sessionform-image{
   width: 50%;
   position:fixed;
   top:0;
@@ -19,7 +18,6 @@
   margin: 0;
   padding: 0;
 }
-
 .sessionform-text {
   width: 50%;
   position:fixed;
@@ -33,17 +31,12 @@
   padding: 50px;
   font-family: sans-serif;
 }
-
-.sessionform-text ul {
-}
-
 .sessionform-text ul li {
   display: flex;
   padding: 20px 0;
   font-size: 16px;
   align-items: center;
 }
-
 .sessionform-text ul li img {
   height: 18px;
   width: 18px;
@@ -51,21 +44,18 @@
   vertical-align: baseline;
   text-align: none;
 }
-
 .sessionform h2 {
   margin-top: 10px;
   margin-bottom: 25px;
 }
-
 .sessionform label {
   font-size: 13px;
   font-weight: lighter;
   padding: 10px 0;
 }
-
 .sessionform input {
   margin: 10px 0;
-  width: 372px;
+  width: 370px;
   height: 28px;
   border: 1px solid #fafafa;
   border-radius: 4px;
@@ -73,40 +63,26 @@
   font-size: 13px;
   background: #fafafa;
 }
-
 .sessionform input:hover {
   border: 1px solid lightgray;
 }
-
 .sessionform input:focus {
   border: 1px solid #21ce99;
   outline: none;
 }
-
 .sessionform .signup-button {
   margin-top: 60px;
-  padding: 17px 50px;
+  padding: 15px 50px;
   font-size: 12px;
   font-weight: 700;
   height: auto;
   width: auto;
   background: #21ce99;
 }
-
 .sessionform .session-buttons {
   display: flex;
   width: 412px;
   justify-content: space-between;
-}
-
-.signup-button.demo {
-  width: 142px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.loggedin-nav-links{
-  display: block;
 }
 .sessionform-errors{
   position: absolute;

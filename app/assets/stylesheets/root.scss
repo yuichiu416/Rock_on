@@ -27,38 +27,6 @@ h1, li{
 div a, li a {
     color: black;
 }
-.display-block{
-    display: block;
-}
-nav{
-    display: flex;
-    min-width: 520px;
-    align-self: flex-end;
-    margin-left: 0px;
-    flex-grow: 3;
-}
-.nav__links {
-    list-style: none;
-    display: inline-block;
-    margin: 0;
-    align-self: flex-start;
-}
-.nav__links li,  {
-    display: inline-block;
-    padding: 0px 20px;
-}
-.nav__links li a {
-    transition: all 0.3s ease 0s;
-    color: black;
-}
-.nav__links li a:hover {
-    color: #0088a9
-}
-
-.tail {
-    margin: 0;
-}
-
 .button {
     margin-left: 20px;
     padding: 9px 25px;
@@ -67,11 +35,47 @@ nav{
     border-radius: 50px;
     transition: all 0.3s ease 0s;
 }
-
 .button:hover {
     background-color: rgba(0,136,169,0.8);
 }
-.vertical-flex{
-    display: flex;
-    flex-direction: column;
+.margin-auto{
+    margin:auto;
+}
+.color-red{
+    color: red;
+}
+.flex{
+  display: flex;
+}
+.margin-right-30{
+  margin-right: 30px;
+}
+.bold {
+    font-weight: bold;
+}
+.margin-top-20px{
+  margin-top: 20px;
+}
+.margin-left-20px{
+  margin-left: 20px;
+}
+.margin-right-20px{
+  margin-right: 20px;
+}
+.hover-text-underline:hover{
+  text-decoration: underline;
+}
+.position-absolute{
+  position: absolute;
+}
+.green-btn{
+    padding: 5px 25px;
+    background-color: mediumseagreen;
+    border-radius: 10px;
+}
+.green-btn:hover{
+    background: #1ae9aa;
+}
+.green-btn:focus{
+    outline: none;
 }

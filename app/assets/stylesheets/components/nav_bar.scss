@@ -13,6 +13,7 @@
 }
 .loggedin-nav-link{
   padding-right: 20px;
+  align-self: center;
 }
 .nav-bar {
   display: flex;
@@ -52,6 +53,16 @@
 .nav-link:focus {
   outline: none;
 }
+nav{
+    display: flex;
+    min-width: 520px;
+    align-self: flex-end;
+    margin-left: 0px;
+    flex-grow: 3;
+}
+.tail {
+    margin: 0;
+}
 .search {
   background-color: white;
   display: inline-block;
@@ -72,12 +83,6 @@
 }
 .svg-logo:hover {
   opacity: 0.5;
-}
-.logout{
-  margin-right: 30px;
-}
-.flex{
-  display: flex;
 }
 .stock-search{
   position: absolute;

@@ -5,7 +5,6 @@ export const postUser = (user) => {
         data: { user }
     });
 };
-
 export const postSession = (user) => {
     return $.ajax({
         url: '/api/session',
@@ -13,7 +12,6 @@ export const postSession = (user) => {
         data: { user }
     });
 };
-
 export const deleteSession = () => {
     return $.ajax({
         url: '/api/session',

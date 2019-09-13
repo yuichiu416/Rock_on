@@ -67,5 +67,6 @@ class Watchlist extends Component{
             </Paper>
         );
     }
-}
+};
+
 export default Watchlist;

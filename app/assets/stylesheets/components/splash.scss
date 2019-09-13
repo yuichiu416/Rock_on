@@ -1,3 +1,7 @@
+.panes{
+  width: 80%;
+  margin: 0 auto;
+}
 .panes h1 {
   font-size: 52px;
   padding: 0;
@@ -31,37 +35,14 @@
   margin-top: 145px;
   margin-left: 50px;
 }
-
 .pane1 div {
   padding-bottom: 25px;
 }
-
 .pane1 p {
   font-size: 18px;
   font-family: sans-serif;
   margin: 5px 0;
   font-weight: lighter;
-}
-
-.signup-button {
-  position: absolute;
-  cursor: pointer;
-  color: white;
-  background: #21ce99;
-  margin: 0;
-  padding: 14px 21px;
-  font-weight: normal;
-  font-size: 16px;
-  border-radius: 4px;
-  text-align: left;
-}
-
-.signup-button:hover {
-  background: #1ae9aa;
-}
-
-.signup-button:focus {
-  outline: none;
 }
 .heading1{
   margin: 20px 0;
@@ -91,7 +72,6 @@
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-
 .hidable:hover{
     display: block;
 }
@@ -100,4 +80,7 @@
   align-self: flex-start;
   text-align:left;
   margin-bottom: 20px;
+}
+.banner2{
+  width: 100%;
 }

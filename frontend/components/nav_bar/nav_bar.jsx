@@ -20,9 +20,9 @@ class NavBar extends React.Component{
                 document.getElementById(`match-${index}`).click();
             }
             if(e.key === "ArrowUp"){
-                    index--;
+                index--;
             } else if(e.key === "ArrowDown"){
-                    index++;
+                index++;
             }
             if(index < 0){
                 index = lastIdx;
@@ -40,11 +40,9 @@ class NavBar extends React.Component{
             }
         });
     }
-
     handleInput(e) {
         this.setState({ inputVal: e.currentTarget.value});
     }
-
     matches() {
         const matches = [];
         if (this.state.inputVal.length === 0) {
@@ -63,18 +61,16 @@ class NavBar extends React.Component{
         }
         return matches;
     }
-
     selectName(event) {
         const stockName = event.currentTarget.innerText;
         this.setState({ inputVal: "" });
     }
-
     render(){
         const { currentUser, logout } = this.props;
-        let results = this.matches().map((result, i) => (
+        let searchResults = this.matches().map((result, i) => (
             <li key={i} onClick={this.selectName} className={i == this.state.index ? "selected" : ""}><Link to={`/stocks/${result}`} id={`match-${i}`}>{result}</Link></li>
         ));
-        results = <ul className="stock-search">{results}</ul>
+        searchResults = <ul className="stock-search">{searchResults}</ul>
 
         const display = currentUser ? (
             <nav className="loggedin-nav-bar" >
@@ -89,13 +85,13 @@ class NavBar extends React.Component{
                 <div className="site-navigation">
                     <form className="search">
                         <input type="text" placeholder="Search.." onChange={this.handleInput} value={this.state.inputVal}/>
-                        {results}
+                        {searchResults}
                     </form>
 
                 </div>
                 <div className="loggedin-nav-links">
                     <NavLink to="/" className="loggedin-nav-link">Home</NavLink>
-                    <button onClick={logout} className="logout">Log Out</button>
+                    <button onClick={logout} className="margin-right green-btn">Log Out</button>
                 </div>
             </nav>
         ) : (
@@ -115,7 +111,6 @@ class NavBar extends React.Component{
             </div>
         );
     }
-
 }
 
 export default NavBar;

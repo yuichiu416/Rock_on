@@ -6,8 +6,8 @@ export default (state = {}, action) => {
         case RECEIVE_TRANSACTION:
             return Object.assign({}, { transaction: action.transaction });
         case RECEIVE_TRANSACTIONS:
-            return Object.assign({}, {transactions: Object.values(action.transactions).map(info => {return info.num_shares})});
+            return Object.assign({}, {transactions: Object.values(action.transactions).map(info => (info.num_shares))});
         default:
             return state;
     }
-}
+};

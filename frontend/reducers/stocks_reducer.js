@@ -8,8 +8,6 @@ export default (state = {}, action) => {
             return Object.assign({}, {
                 [action.ticker]:{
                     companyName: stock.companyName,
-                    exchange: stock.exchange,
-                    industry: stock.industry,
                     website: stock.website,
                     description: stock.description,
                     CEO: stock.CEO,
@@ -18,16 +16,12 @@ export default (state = {}, action) => {
                     section: stock.sector,
                     employees: stock.employees,
                     tags: stock.tags,
-                    address: stock.address,
-                    address2: stock.address2,
                     state: stock.state,
                     city: stock.city,
-                    zip: stock.zip,
-                    country: stock.country,
-                    phone: stock.phone
+                    zip: stock.zip
                 }
             });
         default:
             return state;
     }
-}
+};

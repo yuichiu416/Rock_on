@@ -5,7 +5,6 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 const mapStateToProps = state => ({
     loggedIn: Boolean(state.session.currentUser),
 });
-
 const Auth = ({ component: Component, path, loggedIn }) => (
     <Route
         path={path}
@@ -14,7 +13,6 @@ const Auth = ({ component: Component, path, loggedIn }) => (
         )}
     />
 );
-
 const Protected = ({ component: Component, path, loggedIn }) => (
     <Route
         path={path}
