@@ -9,12 +9,12 @@ export const handleBigNum = (num) => {
 };
 
 export const calculateBalance = (deposits) => {
-    if (deposits.length < 1)
+    if (!deposits || deposits.length < 1)
         return;
     return deposits.reduce((a, b) => a + b);
 }
 export const calculateShares = (transactions) => {
-    if (transactions.length < 1)
+    if (!transactions || transactions.length < 1)
         return;
     return transactions.reduce((a, b) => a + b);
 }

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:create]
   resources :deposits, only: [:create, :show]
-  resources :transactions, only: [:create, :show]
+  resources :transactions, only: [:create, :show, :index]
   match '*path' => 'root#bad_route', via: :all
 end

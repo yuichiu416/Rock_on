@@ -9,6 +9,10 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def index
+    @transactions = Transaction.where(user_id: params[:user_id])
+  end
+
   def show
     @transactions = Transaction.where(user_id: params[:id], ticker: params[:ticker])
   end

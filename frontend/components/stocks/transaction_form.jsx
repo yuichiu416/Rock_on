@@ -26,24 +26,24 @@ export default class TransactionForm extends Component {
         this.state = {
             selected: 0,
             cost: 0, 
-            shares: this.props.shares,
+            shares: props.shares,
             hint: "",
-            balance: this.props.balance,
+            balance: props.balance,
             available_shares: 0
         };
-        const user_id = this.props.currentUser.id;
-        const ticker = this.props.match.params.ticker;
+        const user_id = props.currentUser.id;
+        const ticker = props.match.params.ticker;
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.calculateBalance = calculateBalance;
         this.calculateShares = calculateShares;
         this.handleFreeDeposit = this.handleFreeDeposit.bind(this);
-        this.props.fetchTransactions(user_id).then(() => 
-            this.calculateBalance(this.props.deposits.deposit)).then(balance =>
+        props.fetchTransactions(user_id).then(() => 
+            this.calculateBalance(props.deposits.deposit)).then(balance =>
                 this.setState({balance: balance}));
-        this.props.getAllStockInfo(user_id, ticker).then(() => 
-            this.calculateShares(this.props.transactions.transactions)).then(available_shares => 
+        props.getAllStockInfo(user_id, ticker).then(() => 
+            this.calculateShares(props.transactions.transactions)).then(available_shares => 
                 this.setState({available_shares: available_shares}));
     }
     selectTab(num){

@@ -24,3 +24,10 @@ export const getTransactions = (user_id, ticker) => {
         method: 'GET'
     });
 };
+
+export const getAllTransactions = (user_id) => {
+    return $.ajax({
+      url: `/transactions?user_id=${user_id}`,
+      method: "GET"
+    });
+};
