@@ -1,5 +1,5 @@
 # Rock_on
-A full-stack project. Clone of [Robinhood](https://robinhood.com/)
+RockOn, a clone of [Robinhood](https://robinhood.com/), is an investing application that allows users to purchase and sell stocks.
 
 [Live Demo](https://rock-on-5566.herokuapp.com/)
 
