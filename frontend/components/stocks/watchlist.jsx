@@ -52,19 +52,17 @@ class Watchlist extends Component{
             );
         });
         return (
-            <Paper className="watchlist">
-                <Table>
-                    <thead>
-                        <tr className="watchlist-header">
-                            <th>#</th>
-                            <th>Stock Symbol</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {trs}
-                    </tbody>
-                </Table>
-            </Paper>
+          <Paper className="watchlist white-sheet">
+            <Table>
+              <thead>
+                <tr className="watchlist-header">
+                  <th>#</th>
+                  <th>Stock Symbol</th>
+                </tr>
+              </thead>
+              <tbody>{trs}</tbody>
+            </Table>
+          </Paper>
         );
     }
 };

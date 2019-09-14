@@ -7,7 +7,6 @@ class SessionForm extends React.Component {
             username: '',
             email: '',
             password: '',
-            errors: props.errors,
         };
         props.clearErrors();
         this.handleLogIn = this.handleLogIn.bind(this);
@@ -32,6 +31,11 @@ class SessionForm extends React.Component {
     }
     handleDemo(e) {
         e.preventDefault();
+        this.state = {
+            username: "",
+            email: "",
+            password: ""
+        };
         const username = 'Demo'.split('');
         this.handleDemoUsername(username);
     }

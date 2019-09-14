@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import StockIndex from './stock_index';
-import { calculateBalance, calculateShares } from "../../util/number_util";
 import { fetchTransactions, getAllStocksHaving } from "../../actions/stock_actions";
 
 

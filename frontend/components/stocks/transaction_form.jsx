@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { calculateBalance , calculateShares } from '../../util/number_util';
+
 class Header extends Component{
     render() {
         const selected = this.props.selected;
@@ -26,25 +26,19 @@ export default class TransactionForm extends Component {
         this.state = {
             selected: 0,
             cost: 0, 
-            shares: props.shares,
+            shares: this.props.shares,
             hint: "",
-            balance: props.balance,
+            balance: this.props.balance,
             available_shares: 0
         };
-        const user_id = props.currentUser.id;
-        const ticker = props.match.params.ticker;
+        const user_id = this.props.currentUser.id;
+        const ticker = this.props.match.params.ticker;
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.calculateBalance = calculateBalance;
-        this.calculateShares = calculateShares;
         this.handleFreeDeposit = this.handleFreeDeposit.bind(this);
-        props.fetchTransactions(user_id).then(() => 
-            this.calculateBalance(props.deposits.deposit)).then(balance =>
-                this.setState({balance: balance}));
-        props.getAllStockInfo(user_id, ticker).then(() => 
-            this.calculateShares(props.transactions.transactions)).then(available_shares => 
-                this.setState({available_shares: available_shares}));
+        this.props.fetchTransactions(user_id).then(() => this.calculateBalance(this.props.deposits.deposit));
+        this.props.getAllStockInfo(user_id, ticker).then(() => this.calculateShares(this.props.transactions.transactions));
     }
     selectTab(num){
         this.setState({selected : num});
@@ -53,7 +47,16 @@ export default class TransactionForm extends Component {
         const val = e.currentTarget.value
         this.setState({ shares: val, cost: val * this.props.price });
     }
-  
+    calculateBalance(deposits) {
+        if (deposits.length < 1)
+            return;
+        this.setState({ balance: deposits.reduce((a, b) => a + b) });
+    }
+    calculateShares(transactions) {
+        if (transactions.length < 1)
+            return;
+        this.setState({ available_shares: transactions.reduce((a, b) => a + b) });
+    }
     handleSubmit(e){
         e.preventDefault();
         const ticker = this.props.match.params.ticker;
