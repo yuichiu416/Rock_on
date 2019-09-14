@@ -6,9 +6,17 @@ class Stock extends Component {
         super(props);
     }
     render() {
+        let stockList;
         return (
             <div className="stock">
-                <div className="loading-text" >Click symbols on the right to load stock information<br /></div>
+                <div className="portfolio">
+                    <h1>Portfolio</h1>
+                    <h3>Cash balance:</h3>
+                    <h3>Stocks having:</h3>
+                    <ul>
+                        {stockList}
+                    </ul>
+                </div>
                 <Watchlist />
             </div>
         )
