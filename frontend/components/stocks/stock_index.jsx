@@ -33,7 +33,7 @@ class Stock extends Component {
                     <h1>Portfolio</h1><br/><br/>
                     <h3>Cash balance:</h3>
                     <h3 className="margin-auto">${this.state.total.toFixed(2)}</h3>
-                    <h3>Stocks available:</h3>
+                    <h3>Stocks in hand:</h3>
                     <ul className="white-sheet">
                         {list}
                     </ul>
