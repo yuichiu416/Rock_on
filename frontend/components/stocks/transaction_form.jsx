@@ -31,14 +31,16 @@ export default class TransactionForm extends Component {
             balance: props.balance,
             available_shares: 0
         };
-        const user_id = props.currentUser.id;
-        const ticker = props.match.params.ticker;
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFreeDeposit = this.handleFreeDeposit.bind(this);
-        props.fetchTransactions(user_id).then(() => this.calculateBalance(props.deposits.deposit));
-        props.getAllStockInfo(user_id, ticker).then(() => this.calculateShares(props.transactions.transactions));
+    }
+    componentDidMount(){
+        const user_id = this.props.currentUser.id;
+        const ticker = this.props.match.params.ticker;
+        this.props.fetchTransactions(user_id).then(() => this.calculateBalance(this.props.deposits.deposit));
+        this.props.getAllStockInfo(user_id, ticker).then(() => this.calculateShares(this.props.transactions.transactions));
     }
     selectTab(num){
         this.setState({selected : num});
@@ -55,6 +57,7 @@ export default class TransactionForm extends Component {
     calculateShares(transactions) {
         if (!transactions || transactions.length < 1)
             return;
+        console.log(transactions);
         this.setState({ available_shares: transactions.reduce((a, b) => a + b) });
     }
     handleSubmit(e){
