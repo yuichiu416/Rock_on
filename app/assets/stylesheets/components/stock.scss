@@ -1,6 +1,6 @@
 .stock{
     display:flex;
-    max-width: 950px;
+    max-width: 90%;
     height: 100vh;
     flex-direction: row;
     margin: 0 auto;
@@ -124,5 +124,12 @@
         border: 1px solid black;
         padding: 10px;
     }
-
+}
+.portfolio-table{
+    tr:nth-child(3) td:first-child h3{
+        margin-right: 30px;
+    }
+    td:nth-child(even){
+        text-align: right;
+    }
 }

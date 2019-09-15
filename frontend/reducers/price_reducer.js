@@ -4,7 +4,7 @@ export default (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_STOCK_PRICE:
-            return Object.assign({}, { price: action.stock[0].lastSalePrice });
+            return Object.assign({}, { price: action.stock.open});
         default:
             return state;
     }

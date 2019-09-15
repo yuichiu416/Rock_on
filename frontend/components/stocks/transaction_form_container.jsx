@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
     makeDeposit: deposit => dispatch(makeDeposit(deposit)),
-    fetchTransactions: id => dispatch(fetchTransactions(id)),
+    fetchTransactions: user_id => dispatch(fetchTransactions(user_id)),
     buyStock: stock => dispatch(buyStock(stock)),
     getAllStockInfo: (user_id, ticker) => dispatch(getAllStockInfo(user_id, ticker))
 });

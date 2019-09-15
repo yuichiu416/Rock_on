@@ -48,9 +48,9 @@ const receiveStockPrice = (stock) => ({
     stock
 });
 
-export const getStockPrice = ticker => dispatch => (
-    fetchStockPrice(ticker).then(stock => dispatch(receiveStockPrice(stock)))
-);
+export const getStockPrice = ticker => dispatch => {
+    return fetchStockPrice(ticker).then(stock => dispatch(receiveStockPrice(stock)))
+};
 
 export const buyStock = amount => dispatch => (
     postTransaction(amount).then(transaction => 

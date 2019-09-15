@@ -26,19 +26,19 @@ export default class TransactionForm extends Component {
         this.state = {
             selected: 0,
             cost: 0, 
-            shares: this.props.shares,
+            shares: props.shares,
             hint: "",
-            balance: this.props.balance,
+            balance: props.balance,
             available_shares: 0
         };
-        const user_id = this.props.currentUser.id;
-        const ticker = this.props.match.params.ticker;
+        const user_id = props.currentUser.id;
+        const ticker = props.match.params.ticker;
         this.selectTab = this.selectTab.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFreeDeposit = this.handleFreeDeposit.bind(this);
-        this.props.fetchTransactions(user_id).then(() => this.calculateBalance(this.props.deposits.deposit));
-        this.props.getAllStockInfo(user_id, ticker).then(() => this.calculateShares(this.props.transactions.transactions));
+        props.fetchTransactions(user_id).then(() => this.calculateBalance(props.deposits.deposit));
+        props.getAllStockInfo(user_id, ticker).then(() => this.calculateShares(props.transactions.transactions));
     }
     selectTab(num){
         this.setState({selected : num});
@@ -48,12 +48,12 @@ export default class TransactionForm extends Component {
         this.setState({ shares: val, cost: val * this.props.price });
     }
     calculateBalance(deposits) {
-        if (deposits.length < 1)
+        if (!deposits || deposits.length < 1)
             return;
         this.setState({ balance: deposits.reduce((a, b) => a + b) });
     }
     calculateShares(transactions) {
-        if (transactions.length < 1)
+        if (!transactions || transactions.length < 1)
             return;
         this.setState({ available_shares: transactions.reduce((a, b) => a + b) });
     }
