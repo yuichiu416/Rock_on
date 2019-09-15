@@ -57,7 +57,6 @@ export default class TransactionForm extends Component {
     calculateShares(transactions) {
         if (!transactions || transactions.length < 1)
             return;
-        console.log(transactions);
         this.setState({ available_shares: transactions.reduce((a, b) => a + b) });
     }
     handleSubmit(e){

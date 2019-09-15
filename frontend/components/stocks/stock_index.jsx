@@ -41,18 +41,20 @@ class Stock extends Component {
                 <div className="portfolio">
                     <h1>Portfolio</h1><br/><br/>
                     <table className="portfolio-table">
-                        <tr>
-                            <td><h3>Total stock value:</h3></td>
-                            <td><h3 className="margin-auto"> ${this.state.total.toFixed(2)}</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>Cash balance:</h3></td>
-                            <td><h3 className="margin-auto"> ${this.state.balance.toFixed(2)}</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>Total Account value:</h3></td>
-                            <td><h3 className="margin-auto"> ${(this.state.total + this.state.balance).toFixed(2)}</h3></td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><h3>Total stock value:</h3></td>
+                                <td><h3 className="margin-auto"> ${this.state.total.toFixed(2)}</h3></td>
+                            </tr>
+                            <tr>
+                                <td><h3>Cash balance:</h3></td>
+                                <td><h3 className="margin-auto"> ${this.state.balance.toFixed(2)}</h3></td>
+                            </tr>
+                            <tr>
+                                <td><h3>Total Account value:</h3></td>
+                                <td><h3 className="margin-auto"> ${(this.state.total + this.state.balance).toFixed(2)}</h3></td>
+                            </tr>
+                        </tbody>
                     </table>
                     
                     <h3>Stocks in hand:</h3>
