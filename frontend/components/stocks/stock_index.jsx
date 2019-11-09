@@ -33,6 +33,7 @@ class Stock extends Component {
                             <li><h3>Total Account value:</h3></li>
                             <li><h3 className="margin-auto"> ${(this.state.total + this.state.balance).toFixed(2)}</h3></li>
                     </ul> */}
+                   
                 </div>
                 <Watchlist/>
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchTransactions, getAllStocksHaving } from "../../actions/stock_actions";
+import { getStockPrice, getAllStocksHaving } from "../../actions/stock_actions";
 
 export const stockList = [
     "MSFT",
@@ -37,16 +37,17 @@ export const stockList = [
     "PYPL",
     "SPY",
     "CSCO",
-    "TECHY",
     "CRM",
     "F"
 ];
+const prices=[143.98, 36.06,140.22,57.85,334.50,207.66,258.69,63.18,4.78,14.18,190.00,1787.89,33.07,288.87,27.48,29.16,6.96,187.9,6.27,0.93,2.13,39.34,4.8,6.17,53.5,52.46,43.23,178.38,19.74,100.02,307.8,48.42,159.25]
 
 class Watchlist extends Component {
     constructor(props) {
         super(props);
         this.handlePortfolio = this.handlePortfolio.bind(this);
         this.state = { stocks: [] };
+        stockList.map(ticker => this.props.getStockPrice(ticker));
     }
 
     componentDidMount() {
@@ -68,16 +69,20 @@ class Watchlist extends Component {
     }
 
     render() {
-        const shares = this.state.stocks.map(info => {
+
+        const shares = this.state.stocks.map((info, i) => {
             if (info.shares === 0)
                 return "";
-            return <li key={info.ticker}><Link to={`/stocks/${info.ticker}`}>{info.ticker}<br /></Link> {info.shares} shares</li>
+            return  <li key={info.ticker}>
+                        <div><Link to={`/stocks/${info.ticker}`}>{info.ticker}</Link> </div>
+                        <div>{info.shares} shares</div>
+                        ${prices[i]}
+                    </li>
 
         });
-        // const list = stockList.map((ticker, idx) => {
+        // const list = stockList.map((ticker) => {
         //     return (
         //         <ul key={ticker}>
-        //             <li><Link to={`/stocks/${ticker}`}>{idx}</Link></li>
         //             <li><Link to={`/stocks/${ticker}`}>{ticker}</Link></li>
         //         </ul>
         //     );
@@ -98,12 +103,15 @@ class Watchlist extends Component {
 const mapStateToProps = (state) => {
     return {
         currentUser: state.session.currentUser,
-        portfolio: state.entities.transactions.portfolio
+        portfolio: state.entities.transactions.portfolio,
+        price: state.entities.price.price
+
 
     };
 };
 
 const mapDispatchToProps = dispatch => ({
+    getStockPrice: ticker => dispatch(getStockPrice(ticker)),
     getAllStocksHaving: user_id => dispatch(getAllStocksHaving(user_id))
 });
 
