@@ -3,21 +3,15 @@
     box-sizing: border-box;
     min-width: 275px;
     height: auto;
-    
-    thead th{
-        padding-bottom: 5px;
-    }
-    td{
-        padding: 5px 0;
+    list-style: none;
+    text-align: left;
+    li{
+        padding: 10px;
     }
 }
-.watchlist td{
+.watchlist li{
     border: 1px solid black;
 }
-.watchlist td a:hover{
+.watchlist li a:hover{
     color: red;
-}
-.watchlist-header th{
-    font-weight: bold;
-    font-size: 24px;
 }
