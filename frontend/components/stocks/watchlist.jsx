@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getStockPrice, getAllStocksHaving } from "../../actions/stock_actions";
+import { getAllStocksHaving } from "../../actions/stock_actions";
 
 export const stockList = [
     "MSFT",
@@ -47,7 +47,6 @@ class Watchlist extends Component {
         super(props);
         this.handlePortfolio = this.handlePortfolio.bind(this);
         this.state = { stocks: [] };
-        stockList.map(ticker => this.props.getStockPrice(ticker));
     }
 
     componentDidMount() {
@@ -103,15 +102,12 @@ class Watchlist extends Component {
 const mapStateToProps = (state) => {
     return {
         currentUser: state.session.currentUser,
-        portfolio: state.entities.transactions.portfolio,
-        price: state.entities.price.price
-
+        portfolio: state.entities.transactions.portfolio
 
     };
 };
 
 const mapDispatchToProps = dispatch => ({
-    getStockPrice: ticker => dispatch(getStockPrice(ticker)),
     getAllStocksHaving: user_id => dispatch(getAllStocksHaving(user_id))
 });
 
