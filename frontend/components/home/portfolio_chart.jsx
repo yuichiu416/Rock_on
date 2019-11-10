@@ -65,23 +65,13 @@ class PortfolioChart extends React.Component {
     }
 
     render() {
-        // let data = this.props.portfolioValue.slice().sort((a, b) => {
-        //     return Date.parse(a.date) - Date.parse(b.date)
-        // }).filter(el => {
-        //     return el !== undefined
-        // })
-
-        // const label = this.props.timeFrame === "1D" ? "label" : "date";
-
-        // let odometer = this.state.hoverValue || this.state.open_value
         return (
             <div className="ticker-chart block-paddings">
 
-                <h3>$<Odometer value={this.state.closeValue} /></h3>
+                {/* <h3>$<Odometer value={this.state.closeValue} /></h3> */}
                 <p>{`$${this.state.change}`} {`(${this.state.percentChange}%)`}</p>
 
                 <LineChart
-                    // width={676} 
                     width={646}
                     height={196}
                     data={this.props.portfolioValue}

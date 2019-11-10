@@ -17,7 +17,7 @@ export default class Home extends Component {
             <div className="home">
                 <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 {display}
-                {/* <ProtectedRoute exact path="/" component={News} /> */}
+                <ProtectedRoute exact path="/" component={News} />
             </div>
         )
     }
