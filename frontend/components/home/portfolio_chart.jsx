@@ -16,7 +16,6 @@ class PortfolioChart extends React.Component {
     }
 
     componentDidMount() {
-
         this.setState({
             closeValue: parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value).toFixed(2),
             change: parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value).toFixed(2),
@@ -32,7 +31,6 @@ class PortfolioChart extends React.Component {
                 change: parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value).toFixed(2),
                 percentChange: (parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value / this.props.portfolioValue[this.props.portfolioValue.length - 1].value) * 100).toFixed(2)
             })
-
         }
     }
 
@@ -52,7 +50,6 @@ class PortfolioChart extends React.Component {
             })
         }
     }
-
 
     handleMouseOut(e) {
         let currentChange = this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value
