@@ -1,13 +1,7 @@
 .home{
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-}
-table {
-  border-collapse: collapse;
-}
-table, td, th {
-  border: 1px solid black;
-  height: auto;;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
 }
