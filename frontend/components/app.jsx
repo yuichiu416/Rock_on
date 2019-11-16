@@ -10,9 +10,9 @@ export default () => {
     return (
         <div>
             <Switch>
-                <AuthRoute path="/signup" component={SignupContainer} />
-                <AuthRoute path="/login" component={LoginContainer} />
                 <Route exact path='/' component={HomeContainer} />
+                <Route path="/signup" component={SignupContainer} />
+                <Route path="/login" component={LoginContainer} />
                 <ProtectedRoute exact path='/stocks/:ticker' component={StockShowContainer} />
                 <Redirect to="/" />
             </Switch>
