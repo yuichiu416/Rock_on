@@ -70,7 +70,7 @@ class Stock extends Component {
 
     valueChange(val) {
         let random = Math.random() * 0.1;
-        return (1.05 - random) * val;
+        return (1.0501 - random) * val;
     }
 
     updatePrices(timeFrame) { // CLICKED TIMEFRAME CALC
@@ -135,11 +135,6 @@ class Stock extends Component {
         })
 
         if (this.state.data) {
-            // let data = this.state.portfolioValue.slice().sort((a, b) => {
-            //     return Date.parse(a.date) - Date.parse(b.date)
-            // }).filter(el => {
-            //     return el !== undefined
-            // })
             return (
                 <div className="stock">
                     <div className="portfolio">
@@ -148,29 +143,15 @@ class Stock extends Component {
                                 portfolioValue={this.state.data}
                                 tfVal={this.state[this.state.timeFrame]}
                                 timeFrame={this.state.timeFrame}
-                            openValue={Math.max(this.state["1D"].open_value)}
-                            change={this.state.change}
-                            changePercent={this.state.changePercent}
-                            tF={tF}
+                                openValue={Math.max(this.state["1D"].open_value)}
+                                change={this.state.change}
+                                changePercent={this.state.changePercent}
+                                tF={tF}
                             />
-
                             <div className="time-frame-buttons">{tF}</div>
                         </div>
-                        {/* <h1>Portfolio</h1><br/><br/> */}
-                        {/* <ul className="portfolio-table">
-                                <li><h3>Total stock value:</h3></li>
-                                <li><h3 className="margin-auto"> ${this.state.total.toFixed(2)}</h3></li>
-                    
-                                <li><h3>Cash balance:</h3></li>
-                                <li><h3 className="margin-auto"> ${this.state.balance.toFixed(2)}</h3></li>
-                    
-                                <li><h3>Total Account value:</h3></li>
-                                <li><h3 className="margin-auto"> ${(this.state.total + this.state.balance).toFixed(2)}</h3></li>
-                        </ul> */}
-                    
                     </div>
                     <Watchlist/>
-
                 </div>
             )
         }

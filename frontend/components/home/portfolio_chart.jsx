@@ -64,8 +64,6 @@ class PortfolioChart extends React.Component {
     render() {
         return (
             <div className="ticker-chart block-paddings">
-
-                {/* <h3>$<Odometer value={this.state.closeValue} /></h3> */}
                 <p>{`$${this.state.change}`} {`(${this.state.percentChange}%)`}</p>
 
                 <LineChart
@@ -81,7 +79,6 @@ class PortfolioChart extends React.Component {
                     <Tooltip className='tooltip'
                         contentStyle={{ border: '0', backgroundColor: 'transparent', color: 'grey' }}
                         formatter={(value, name, props) => { return [""] }}
-                        // position={{ x: this.state.chartX - 5000, y: this.state.chartY -1000 }}
                         isAnimationActive={false} cursor={{ stroke: "Gainsboro", strokeWidth: 1.5 }} />
                     <Line connectNulls type="linear" dataKey="value" dot={false} stroke="#21ce99" strokeWidth={1} />
                 </LineChart>

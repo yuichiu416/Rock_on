@@ -89,7 +89,7 @@ class NavBar extends React.Component{
                 </div>
                 <div className="loggedin-nav-links">
                     <a href="mailto:yuichiu416@gmail.com"><img src="images/email.svg" /></a>
-                    <a href="https://github.com/yuichiu416"><img className="github" src="images/github.svg" /></a>
+                    <a href="https://github.com/yuichiu416/Rock_on"><img className="github" src="images/github.svg" /></a>
                     <a href="https://www.linkedin.com/in/roger-kiew-18b751155/"><img src="images/linkedIn.svg" /></a>
                     <NavLink to="/" className="loggedin-nav-link">Home</NavLink>
                     <button onClick={logout} className="margin-right green-btn">Log Out</button>

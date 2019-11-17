@@ -1,6 +1,6 @@
 .stock{
     display:flex;
-    max-width: 950px;
+    width: 100%;
     flex-direction: row;
     margin: 0 auto;
 }
@@ -131,4 +131,8 @@
     td:nth-child(even){
         text-align: right;
     }
+}
+
+.time-frame-buttons{
+    margin-top: 100px;
 }
