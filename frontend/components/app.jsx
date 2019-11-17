@@ -8,14 +8,12 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 
 export default () => {
     return (
-        <div>
-            <Switch>
-                <Route exact path='/' component={HomeContainer} />
-                <Route path="/signup" component={SignupContainer} />
-                <Route path="/login" component={LoginContainer} />
-                <ProtectedRoute exact path='/stocks/:ticker' component={StockShowContainer} />
-                <Redirect to="/" />
-            </Switch>
-        </div>
+        <Switch>
+            <Route exact path='/' component={HomeContainer} />
+            <Route path="/signup" component={SignupContainer} />
+            <Route path="/login" component={LoginContainer} />
+            <ProtectedRoute exact path='/stocks/:ticker' component={StockShowContainer} />
+            <Redirect to="/" />
+        </Switch>
     );
 };

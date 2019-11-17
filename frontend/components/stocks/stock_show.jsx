@@ -87,7 +87,7 @@ class StockShow extends React.Component {
             stockInfo = <div className="loading-text">Loading stock information</div>
         }
         return (
-            <div>
+            <div className="home">
                 <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 <div className="stock">
                     {stockInfo}

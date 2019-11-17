@@ -14,7 +14,7 @@ RockOn, a clone of [Robinhood](https://robinhood.com/), is an investing applicat
   
   <img src="./app/assets/images/stock_data.jpg" max-width="800"/>
 
-* Protfolio
+* Protfolio with a chart showing account histroy and displays news
   
 <img src="./app/assets/images/portfolio.jpg" max-width="800"/>
 
