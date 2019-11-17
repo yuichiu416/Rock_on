@@ -69,8 +69,8 @@ class Stock extends Component {
     }
 
     valueChange(val) {
-        let random = Math.random() * 0.1;
-        return (1.0501 - random) * val;
+        let random = Math.random() * 0.1; 
+        return (1.0508 - random) * val;
     }
 
     updatePrices(timeFrame) { // CLICKED TIMEFRAME CALC
