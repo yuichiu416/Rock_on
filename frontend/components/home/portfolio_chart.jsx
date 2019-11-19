@@ -22,6 +22,8 @@ class PortfolioChart extends React.Component {
             percentChange: ((parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value) / this.props.portfolioValue[this.props.portfolioValue.length - 1].value) * 100).toFixed(2),
             timeFrame: this.props.timeFrame
         })
+        console.log(parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value).toFixed(2))
+
     }
 
     componentDidUpdate() {
@@ -36,11 +38,10 @@ class PortfolioChart extends React.Component {
 
     handleMouseOver(e) {
         if (e && e.activePayload !== undefined) {
-            let hoverValue = e.activePayload[0].payload.value;
+            let hoverValue = parseFloat(e.activePayload[0].payload.value).toFixed(2);
             let openValue = this.props.portfolioValue[0].value;
             let change = hoverValue - openValue;
             let dailyPercentChange = (change / hoverValue) * 100
-
             this.setState({
                 closeValue: hoverValue,
                 chartX: e.chartX,
@@ -64,7 +65,8 @@ class PortfolioChart extends React.Component {
     render() {
         return (
             <div className="ticker-chart block-paddings">
-                <p>{`$${this.state.change}`} {`(${this.state.percentChange}%)`}</p>
+                <div className="odometer-value">$<Odometer value={this.state.closeValue}/></div>
+                <p>{`${this.state.change}`} {`(${this.state.percentChange}%)`}</p>
 
                 <LineChart
                     width={646}

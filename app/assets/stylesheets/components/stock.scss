@@ -2,7 +2,7 @@
     display:flex;
     width: 100%;
     flex-direction: row;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
 }
 .stock-panel{
     font-family: "Montserrat", sans-serif;
@@ -135,4 +135,11 @@
 
 .time-frame-buttons{
     margin-top: 100px;
+}
+
+.ticker-chart{
+    margin-top: 20px;
+}
+.odometer-value{
+    font-size: 32px;
 }
