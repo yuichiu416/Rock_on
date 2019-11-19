@@ -4,42 +4,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getAllStocksHaving } from "../../actions/stock_actions";
 
-export const stockList = [
-    "MSFT",
-    "AMD",
-    "DIS",
-    "INTC",
-    "TSLA",
-    "NVDA",
-    "AAPL",
-    "SQ",
-    "GPRO",
-    "SNAP",
-    "FB",
-    "AMZN",
-    "BAC",
-    "NFLX",
-    "UBER",
-    "TWTR",
-    "FIT",
-    "BABA",
-    "ZNGA",
-    "CHK",
-    "NIO",
-    "T",
-    "APHA",
-    "S",
-    "ATVI",
-    "KO",
-    "LYFT",
-    "V",
-    "IQ",
-    "PYPL",
-    "SPY",
-    "CSCO",
-    "CRM",
-    "F"
-];
 const prices=[143.98, 36.06,140.22,57.85,334.50,207.66,258.69,63.18,4.78,14.18,190.00,1787.89,33.07,288.87,27.48,29.16,6.96,187.9,6.27,0.93,2.13,39.34,4.8,6.17,53.5,52.46,43.23,178.38,19.74,100.02,307.8,48.42,159.25]
 
 class Watchlist extends Component {
