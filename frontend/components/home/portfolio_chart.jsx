@@ -6,10 +6,12 @@ class PortfolioChart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            closeValue: parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value).toFixed(2),
-            change: parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value).toFixed(2),
-            percentChange: (parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value / this.props.portfolioValue[this.props.portfolioValue.length - 1].value) * 100).toFixed(2),
-            timeFrame: this.props.timeFrame
+            closeValue: parseFloat(this.props.oldArr[this.props.oldArr.length - 1].value).toFixed(2),
+            change: parseFloat(this.props.oldArr[this.props.oldArr.length - 1].value - this.props.oldArr[1].value).toFixed(2),
+            percentChange: (parseFloat((this.props.oldArr[this.props.oldArr.length - 1].value - this.props.oldArr[1].value) / this.props.oldArr[1].value) * 100).toFixed(2),
+            timeFrame: this.props.timeFrame,
+            oldArr: this.props.oldArr,
+            portfolioValue: this.props.portfolioValue
         }
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
@@ -22,8 +24,6 @@ class PortfolioChart extends React.Component {
             percentChange: ((parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value - this.props.portfolioValue[0].value) / this.props.portfolioValue[this.props.portfolioValue.length - 1].value) * 100).toFixed(2),
             timeFrame: this.props.timeFrame
         })
-        console.log(parseFloat(this.props.portfolioValue[this.props.portfolioValue.length - 1].value).toFixed(2))
-
     }
 
     componentDidUpdate() {
@@ -88,6 +88,5 @@ class PortfolioChart extends React.Component {
         )
     }
 }
-
 
 export default PortfolioChart;

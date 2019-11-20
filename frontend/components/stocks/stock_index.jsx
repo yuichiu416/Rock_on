@@ -65,7 +65,7 @@ class Stock extends Component {
             yesterday = new Date(current - 86400000);
         }
         this.data = data;
-        this.setState({ data: data });
+        this.setState({ data: data, portfolioValue: data });
     }
 
     valueChange(val) {
@@ -75,6 +75,7 @@ class Stock extends Component {
 
     updatePrices(timeFrame) { // CLICKED TIMEFRAME CALC
         var data = [];
+        var old = this.state.portfolioValue
         var current = this.current;
         var last;
         if (timeFrame === '1D') {
@@ -84,7 +85,7 @@ class Stock extends Component {
                 data.push({ date: last, value: datum.value });
                 current = last;
             }
-            this.setState({ data: data });
+            this.setState({ portfolioValue: data, oldArr: old });
         } else if(timeFrame === "5D"){
             for (let i = 200; i < 600; i++) {
                 let datum = this.data[i];
@@ -92,7 +93,7 @@ class Stock extends Component {
                 data.push({ date: last, value: datum.value });
                 current = last;
             }
-            this.setState({ data: data });
+            this.setState({ portfolioValue: data, oldArr: old });
         } else if(timeFrame === "1M"){
             for (let i = 550; i < 1280; i++) {
                 let datum = this.data[i];
@@ -100,7 +101,7 @@ class Stock extends Component {
                 data.push({ date: last, value: datum.value });
                 current = last;
             }
-            this.setState({ data: data });
+            this.setState({ portfolioValue: data, oldArr: old });
         } else if (timeFrame === "3M") {
             for (let i = 280; i < 880; i++) {
                 let datum = this.data[i];
@@ -108,7 +109,7 @@ class Stock extends Component {
                 data.push({ date: last, value: datum.value });
                 current = last;
             }
-            this.setState({ data: data });
+            this.setState({ portfolioValue: data, oldArr: old });
         } else if(timeFrame === "1Y") {
             for (let i = 0; i < 1820; i++) {
                 let datum = this.data[i];
@@ -116,9 +117,9 @@ class Stock extends Component {
                 data.push({ date: last, value: datum.value });
                 current = last;
             }
-            this.setState({ data: data });
+            this.setState({ portfolioValue: data, oldArr: old });
         } else{
-            this.setState({ data: this.data })
+            this.setState({ portfolioValue: this.data, oldArr: old })
         }
     }
 
@@ -140,13 +141,11 @@ class Stock extends Component {
                     <div className="portfolio">
                         <div className="chart-wrap">
                             <PortfolioChart
-                                portfolioValue={this.state.data}
-                                tfVal={this.state[this.state.timeFrame]}
+                                portfolioValue={this.state.portfolioValue}
+                                oldArr={this.state.data}
                                 timeFrame={this.state.timeFrame}
-                                openValue={Math.max(this.state["1D"].open_value)}
-                                change={this.state.change}
-                                changePercent={this.state.changePercent}
-                                tF={tF}
+                                lastIdx={this.state.lastIdx}
+                                color={this.state.color}
                             />
                             <div className="time-frame-buttons">{tF}</div>
                         </div>

@@ -24,7 +24,7 @@ export default class Home extends Component {
     }
     render() {
         const { currentUser, logout } = this.props;
-        const display = currentUser ? (<Stock />) : (<Splash />) 
+        const display = currentUser ? (<Stock stockList={this.state.stockList}/>) : (<Splash />) 
         return (
             <div className="home">
                 <NavBar currentUser={currentUser} logout={logout} stockList={this.state.stockList}/>
