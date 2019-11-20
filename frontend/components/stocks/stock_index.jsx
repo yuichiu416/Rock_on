@@ -82,7 +82,7 @@ class Stock extends Component {
         if (timeFrame === '1D') {
             for(let i = 0; i < 180; i++){
                 let datum = this.data[i];
-                last = new Date(current - 4800);
+                last = new Date(current - 480000);
                 data.push({ date: last, value: datum.value });
                 strData.push({ date: last.toLocaleString("en-us").split(",")[0]});
                 current = last;
@@ -92,40 +92,54 @@ class Stock extends Component {
         } else if(timeFrame === "5D"){
             for (let i = 200; i < 600; i++) {
                 let datum = this.data[i];
-                last = new Date(current - 24000);
+                last = new Date(current - 1200000);
                 data.push({ date: last, value: datum.value });
                 strData.push({ date: last.toLocaleString("en-us").split(",")[0]});
                 current = last;
             }
+            data = data.reverse();
             this.setState({ portfolioValue: data, oldArr: old, "5D": strData });
         } else if(timeFrame === "1M"){
             for (let i = 550; i < 1280; i++) {
                 let datum = this.data[i];
-                last = new Date(current - 144000);
+                last = new Date(current - 3600000);
                 data.push({ date: last, value: datum.value });
                 strData.push({ date: last.toLocaleString("en-us").split(",")[0]});
                 current = last;
             }
+            data = data.reverse();
             this.setState({ portfolioValue: data, oldArr: old, "1M": strData });
         } else if (timeFrame === "3M") {
             for (let i = 280; i < 880; i++) {
                 let datum = this.data[i];
-                last = new Date(current - 432000);
+                last = new Date(current - 14400000);
                 data.push({ date: last, value: datum.value });
                 strData.push({ date: last.toLocaleString("en-us").split(",")[0]});
                 current = last;
             }
+            data = data.reverse();
             this.setState({ portfolioValue: data, oldArr: old, "3M": strData });
         } else if(timeFrame === "1Y") {
             for (let i = 0; i < 1820; i++) {
                 let datum = this.data[i];
-                last = new Date(current - 1728000);
+                last = new Date(current - 21000000);
                 data.push({ date: last, value: datum.value });
                 strData.push({ date: last.toLocaleString("en-us").split(",")[0]});
                 current = last;
             }
+            data = data.reverse();
             this.setState({ portfolioValue: data, oldArr: old, "1Y": strData });
-        } else{
+        } else if(timeFrame === "5Y") {
+            for (let i = 400; i < 3620; i++) {
+                let datum = this.data[i];
+                last = new Date(current - 51000000);
+                data.push({ date: last, value: datum.value });
+                strData.push({ date: last.toLocaleString("en-us").split(",")[0] });
+                current = last;
+            }
+            data = data.reverse();
+            this.setState({ portfolioValue: data, oldArr: old, "1Y": strData });
+        }else{
             this.setState({ portfolioValue: this.data, oldArr: old })
         }
         console.log(this.state);
