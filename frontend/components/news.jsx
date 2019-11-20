@@ -29,7 +29,6 @@ class News extends React.Component {
         } else {
             ticker = ticker.split("/")[2];
             fetchCompanyNews(ticker.slice(1, ticker.length)).then(news => {
-
                 this.setState({ news: news.articles, isLoading: false })
             })
         }

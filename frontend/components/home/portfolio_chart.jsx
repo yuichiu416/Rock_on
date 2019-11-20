@@ -80,7 +80,7 @@ class PortfolioChart extends React.Component {
                     <YAxis hide={true} domain={['dataMin', 'dataMax']} />
                     <Tooltip className='tooltip'
                         contentStyle={{ border: '0', backgroundColor: 'transparent', color: 'grey' }}
-                        formatter={(value, name, props) => { return [""] }}
+                        formatter={(value, name, props) => { return [props.payload.date.toLocaleString('en-US')] }}
                         isAnimationActive={false} cursor={{ stroke: "Gainsboro", strokeWidth: 1.5 }} />
                     <Line connectNulls type="linear" dataKey="value" dot={false} stroke="#21ce99" strokeWidth={1} />
                 </LineChart>
