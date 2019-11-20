@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../nav_bar/nav_bar';
-import { stockList } from '../stocks/watchlist';
 import TransactionForm from './transaction_form_container';
 import { handleBigNum } from '../../util/number_util';
 
@@ -88,7 +86,6 @@ class StockShow extends React.Component {
         }
         return (
             <div className="home">
-                <NavBar currentUser={currentUser} logout={logout} stockList={stockList}/>
                 <div className="stock">
                     {stockInfo}
                     <TransactionForm tabs={tabs} balance={this.state.balance} price={price}/>

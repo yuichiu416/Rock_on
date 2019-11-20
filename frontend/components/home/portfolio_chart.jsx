@@ -76,7 +76,7 @@ class PortfolioChart extends React.Component {
                     onMouseOver={this.handleMouseOver}
                     onMouseLeave={this.handleMouseOut}
                 >
-                    <XAxis dataKey={"date"} hide={true} />
+                    <XAxis dataKey="date" hide={true} />
                     <YAxis hide={true} domain={['dataMin', 'dataMax']} />
                     <Tooltip className='tooltip'
                         contentStyle={{ border: '0', backgroundColor: 'transparent', color: 'grey' }}

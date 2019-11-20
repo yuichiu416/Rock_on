@@ -21,7 +21,7 @@ class News extends React.Component {
     }
 
     getNews() {
-        let ticker = this.props.location.pathname
+        let ticker = this.props.location.pathname.split("/")[2];
         if (ticker === "/") {
             fetchNews().then(news => {
                 this.setState({ news: news.articles, isLoading: false })
