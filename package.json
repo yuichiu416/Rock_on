@@ -19,7 +19,7 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.12"
   },
   "description": "A full-stack project. Clone of [Robinhood](https://robinhood.com/)",
   "version": "1.0.0",
